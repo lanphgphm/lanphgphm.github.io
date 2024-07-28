@@ -16,17 +16,18 @@
 title: Into the Namespaces
 email: lanphuongpham02@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
-  Tagline coming soon.  
+  In isolation and in participation of every and all processes of life.  
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://lanphgphm.github.io/" # the base hostname & protocol for your site, e.g. http://example.com
+permalink: /:categories/:year/:month/:day/:title/
 github_username:  lanphgphm 
 linkedin_username: lanphuongpham02
 
 # Build settings
 markdown: kramdown
 theme: minima
-plugins:
-  - jekyll-feed
+# plugins:
+#   - jekyll-feed
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list

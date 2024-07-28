@@ -1,3 +1,10 @@
+---
+layout: post_with_category 
+title: "Information within Structure" 
+date: 2024-04-29
+categories: Musing
+---
+
 khi mình lưu trữ dữ liệu thì bản thân dữ liệu mình lưu trữ chứa thông tin, that's for sure. nhưng điều mà mình thường không nhận ra đó là cấu trúc lưu trữ dữ liệu cũng chứa rất nhiều thông tin.
 
 ví dụ như file permission string hôm trước mình học. ký tự đầu là file type, 3 bộ triplet ký tự sau là r-w-x cho 3 nhóm user khác nhau, nếu mình muốn tìm xem user có khả năng viết vào file này không, mình sẽ đi thẳng đến ký tự thứ 9 và biết chắc chắn rằng thông tin mình cần chỉ nằm ở ký tự này.

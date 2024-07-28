@@ -1,0 +1,13 @@
+---
+layout: default
+--- 
+
+<h1> All posts in {{ page.title }} </h1> 
+
+<ul> 
+    {% for post in site.categories[page.title] %}
+        <li> 
+            <a href="{{ post.url }}">{{ page.title }}:: {{ post.title }} </a> 
+        </li> 
+    {% endfor %} 
+</ul>

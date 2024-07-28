@@ -1,3 +1,11 @@
+---
+layout: post_with_category 
+title: "What is an Ubuntu Container?" 
+date: 2024-05-03
+categories: Learning
+---
+
+
 khi chạy ubuntu docker container, chính xác là mình đang chạy cái gì vậy?
 
 nếu chạy ubuntu virtual machine, thì là mình đang chạy hệ điều hành ubuntu, kernel linux, trong một môi trường được cô lập và giám sát bởi hypervisor.

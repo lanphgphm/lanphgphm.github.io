@@ -1,3 +1,10 @@
+---
+layout: post_with_category 
+title: "Linux File Permission" 
+date: 2024-04-26
+categories: Learning
+---
+
 windows filesystem là nhiều cây. mỗi cái ổ C/, D/, hay mỗi lần cắm usb vào là có một cái cây mới. linux filesystem là một và chỉ một cây, bắt đầu từ root folder /
 
 mỗi file trong fs sẽ có một bộ quyền hạn được flag bằng các bits. ban đầu thì unix dùng 7 bit để đánh dấu file permission: 3 bit đầu là read-write-execute power của file owner (và root), 3 bit sau là rwx của các user khác. bit thứ 7 đánh dấu xem file này có được execute với quyền hạn của owner không.

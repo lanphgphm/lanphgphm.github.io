@@ -1,3 +1,10 @@
+--- 
+layout: post_with_category 
+title: "Learning It Hard" 
+date: 2024-04-24 
+categories: Musing
+---
+
 học khó, học khổ, và vì sao việc thầy cô giữ tiêu chuẩn cao làm mình thấy rất được dignified.
 
 mình tự nhận là người dốt. đây không phải là một cái self-depricating bit mình nói để mua vui hay cope, mà mình fully aware là mình không biết nhiều.
@@ -12,4 +19,4 @@ this is not a new thought. i have had this realization for quite over a year now
 
 cố lên lan phương.
 
-![archlinux neofetch](/images/arch-installation.png) 
+![nlp lecture notes](/images/learning-it-hard.png) 

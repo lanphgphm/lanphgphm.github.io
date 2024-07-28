@@ -1,3 +1,10 @@
+---
+layout: post_with_category 
+title: "Archlinux Installation" 
+date: 2023-10-29 
+categories: Musing
+---
+
 i meant to install archlinux along with my current ubuntu because i just want to participate in a meme. turns out resizing disk volume is a lot harder than i expected and i accidentally wiped out the only operating system i had.
 
 i had to went along with arch installation and the following 7 hours were absolutely gruesome because i have never went so long without a graphical interface to tweak. even when i have successfully installed arch, i thought i did not, because all i see is a terminal. turns out arch itself only has that terminal and GUI is an add-on.
@@ -14,4 +21,4 @@ i will continue to play around and potentially delete my operating system one or
 
 a truly happy accident. 8/10 would recommend. more operating system adventures to come.
 
-![Archlinux Neofetch](/images/arch.png)
+![Archlinux Neofetch](/images/arch-installation.png)
