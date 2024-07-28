@@ -12,4 +12,4 @@ This blog is primarily my learning log, where I write about what I learned, work
 
 I would also like to give credit to my undergraduate school senior, who is an inspiring figure in general, but specifically whose PhD journal tagline "A node in your knowledge graph" gave me that one last push to make my own blog. 
 
-The name 'Into the Namespaces' is a tribute to one of my favorite features of the Linux kernel: Namespaces and Cgroups, the isolation mechanism that makes containerization technology possible. 
+The name 'Into the Namespaces' is a tribute to one of my favorite features of the Linux kernel: Namespaces and Cgroups, the isolation mechanism that makes containerization technology possible. The site's theme and aesthetics is heavily inspired by C/C++ namespaces, which preceeds double colon `::`.  
