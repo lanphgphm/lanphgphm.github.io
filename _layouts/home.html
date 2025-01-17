@@ -7,7 +7,7 @@ layout: default
     <ul class="post-list">
         {% for post in site.posts %} 
             <li>
-                <span class="post-meta">{{ post.date | date: "%b %d, %Y" }} in <a href="{{ site.baseurl }}/{{post.categories | first }}/"> {{ post.categories | first }}::</a></span>
+                <span class="post-meta">{{ post.date | date: "%b %d, %Y" }} in <a href="{{ site.baseurl }}/category/{{post.categories | first | downcase }}/"> {{ post.categories | first }}</a></span>
                 <h3> 
                     <a class="post-link" href="{{ post.url | relative_url }}index.html">{{ post.title }}</a>
                 </h3>

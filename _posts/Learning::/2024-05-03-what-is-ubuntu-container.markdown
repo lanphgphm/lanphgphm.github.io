@@ -2,7 +2,7 @@
 layout: post_with_category 
 title: "What is an Ubuntu Container?" 
 date: 2024-05-03
-categories: Learning
+categories: "Learning::"
 ---
 
 

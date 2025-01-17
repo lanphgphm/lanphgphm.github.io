@@ -2,7 +2,7 @@
 layout: post_with_category 
 title: "Information within Structure" 
 date: 2024-04-29
-categories: Musing
+categories: "Musing::"
 ---
 
 khi mình lưu trữ dữ liệu thì bản thân dữ liệu mình lưu trữ chứa thông tin, that's for sure. nhưng điều mà mình thường không nhận ra đó là cấu trúc lưu trữ dữ liệu cũng chứa rất nhiều thông tin.

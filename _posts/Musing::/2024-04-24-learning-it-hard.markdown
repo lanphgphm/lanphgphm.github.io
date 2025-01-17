@@ -2,7 +2,7 @@
 layout: post_with_category 
 title: "Learning It Hard" 
 date: 2024-04-24 
-categories: Musing
+categories: "Musing::"
 ---
 
 học khó, học khổ, và vì sao việc thầy cô giữ tiêu chuẩn cao làm mình thấy rất được dignified.

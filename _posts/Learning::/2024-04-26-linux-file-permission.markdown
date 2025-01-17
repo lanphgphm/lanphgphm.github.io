@@ -2,7 +2,7 @@
 layout: post_with_category 
 title: "Linux File Permission" 
 date: 2024-04-26
-categories: Learning
+categories: "Learning::"
 ---
 
 windows filesystem là nhiều cây. mỗi cái ổ C/, D/, hay mỗi lần cắm usb vào là có một cái cây mới. linux filesystem là một và chỉ một cây, bắt đầu từ root folder /

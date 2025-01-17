@@ -2,7 +2,7 @@
 layout: post_with_category 
 title: "Archlinux Installation" 
 date: 2023-10-29 
-categories: Musing
+categories: "Musing::"
 ---
 
 i meant to install archlinux along with my current ubuntu because i just want to participate in a meme. turns out resizing disk volume is a lot harder than i expected and i accidentally wiped out the only operating system i had.

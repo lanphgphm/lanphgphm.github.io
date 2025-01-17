@@ -2,7 +2,7 @@
 layout: post_with_category 
 title: "Insecure Programming" 
 date: 2024-06-13
-categories: Learning 
+categories: "Learning::" 
 ---
 
 `printf()` của C lấy 2 argument chính, `printf(format_string, string_pointer_1, string_pointer_2...)`. `format_string` là cái `%s %d`, theo sau đó là một đống pointers đến các thứ cần đc inject vào string.
