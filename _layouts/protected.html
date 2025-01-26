@@ -1,0 +1,34 @@
+---
+layout: default 
+---
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+
+<div id="passwordPrompt">
+  <form onSubmit="return verifyPassword(event)">
+    <input type="password" id="password" />
+    <button type="submit">access</button>
+    <p id="error" style="color: red;"></p>
+  </form>
+</div>
+
+<div id="protectedContent" style="display: none;">
+  {{ content }}
+</div>
+
+<script>
+function verifyPassword(e) {
+  e.preventDefault();
+  const password = document.getElementById('password').value;
+  const hash = CryptoJS.SHA256(password).toString();
+  const correctHash = '{{ page.password_hash }}';
+  
+  if (hash === correctHash) {
+    document.getElementById('passwordPrompt').style.display = 'none';
+    document.getElementById('protectedContent').style.display = 'block';
+  } else {
+    document.getElementById('error').textContent = 'Incorrect password. Try again?';
+  }
+  return false;
+}
+</script>

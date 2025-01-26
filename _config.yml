@@ -33,6 +33,9 @@ collections:
   category:
     output: true
     permalink: /category/:name
+  protected:
+    output: true
+    permalink: /protected/:title/
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
 # to override the default setting.
