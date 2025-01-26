@@ -1,7 +1,7 @@
 ---
 layout: post_with_category 
 title: "Breathe in a lung of toxic air, and keep longing for death" 
-date: 2025-01-27
+date: 2025-01-26
 categories: "Musing::"
 ---
 
