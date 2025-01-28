@@ -10,7 +10,7 @@ chúc mừng năm mới linh
 
 em mong là linh ở bên đó vui hơn, có nhiều silly adventures hơn. em mong linh khoẻ, ăn ngon, ngủ tốt. em mong trời đẹp, nắng đẹp, cỏ cây hoa lá tươi tốt để linh có nhiều chỗ chơi. 
 
-em chỉ biết một phân những khó khăn mà linh đang trải qua thôi, nhưng em đồng cảm với những struggles đó lắm ạ. nếu linh cần người để nói chuyện, hay nếu linh cần em giúp gì, thì linh bảo em nhé!!!
+em chỉ biết một phần những khó khăn mà linh đang trải qua thôi, nhưng em đồng cảm với những struggles đó lắm ạ. nếu linh cần người để nói chuyện, hay nếu linh cần em giúp gì, thì linh bảo em nhé!!!
 
 em thấy mình rất may mắn vì được quen biết và làm bạn của linh. em muốn linh biết là với em thì linh là một người bạn rất đặc biệt và quan trọng (bạn++). 
 
