@@ -14,4 +14,6 @@ năm đó lúc kết thúc YSMUN 2018, Nam Phạm có viết là "rồi một ng
 
 chúc anh mạnh khoẻ, húng chó, và vui trong năm mới. in fact, chúc anh như vậy kể cả khi năm không mới. time isnt real anyways. 
 
+nào về hú iem nhé. 
+
 hehe. 
