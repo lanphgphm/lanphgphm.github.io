@@ -16,7 +16,7 @@ hồi mà chị mới vào fulbright chị thấy khá là cô đơn, tại ch�
 
 bỏ qua những chi tiết có vẻ vô lý trong câu chuyện đó, thì chị nghĩ it speaks to how much the community around the competition meant to me. i did not go very far, but i never regretted trying so hard. and i am very thankful to you for creating a space like that, so that i get to try and make friends. 
 
-chị cũng rất vui vì mình được làm bạn của em nữa. với chị thì em là tiêu chuẩn của một người thú vị. em có nhiều tài lẻ, em có nhiều interest khác nhau, em không để một hay hai lựa chọn định nghĩa mình, em không ngại theo đuổi nhiều thứ có vẻ chẳng liên quan gì đến nhau, because it makes you happy to do so. i think you are the definition of veing limitless. i think you are v cool, and you are giỏi vcl too. i am very happy that i get to know and befriend you. 
+chị cũng rất vui vì mình được làm bạn của em nữa. với chị thì em là tiêu chuẩn của một người thú vị. em có nhiều tài lẻ, em có nhiều interest khác nhau, em không để một hay hai lựa chọn định nghĩa mình, em không ngại theo đuổi nhiều thứ có vẻ chẳng liên quan gì đến nhau, because it makes you happy to do so. i think you are the definition of being limitless. i think you are v cool, and you are giỏi vcl too. i am very happy that i get to know and befriend you. 
 
 năm mới chúc em khoẻ hơn, vui hơn, có nhiều adventure hơn, đọc được nhiều thứ hay hơn, tìm được nhiều nghệ sĩ hơn. chị mong em biết là em là một người bạn mà chị rất trân trọng. 
 
