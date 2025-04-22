@@ -1,61 +1,73 @@
-<!-- ---
-layout: default 
----
-
-<div class="home">
-    <h2 class="post-list-heading">All posts</h2>
-    <ul class="post-list">
-        {% for post in site.posts %} 
-            <li>
-                <span class="post-meta">{{ post.date | date: "%b %d, %Y" }} in <a href="{{ site.baseurl }}/category/{{post.categories | first | downcase }}/"> {{ post.categories | first }}</a></span>
-                <h3> 
-                    <a class="post-link" href="{{ post.url | relative_url }}index.html">{{ post.title }}</a>
-                </h3>
-            </li> 
-        {% endfor %}
-    </ul>
-</div> -->
-
 ---
 layout: default 
 ---
 
 <div class="home">
-    <h2 class="category-heading">Posts by Category</h2>
+    <h2 class="post-list-heading">Posts by Category</h2>
     
-    <div class="category-container">
-        {% assign categories = site.posts | map: "categories" | flatten | uniq %}
-        {% for category in categories %}
-            <div class="category-card">
-                <h3 class="category-title">{{ category }}</h3>
-                <ul class="category-post-list">
-                    {% for post in site.posts %}
-                        {% if post.categories contains category %}
-                            <li>
-                                <span class="post-meta">{{ post.date | date: "%b %d, %Y" }}</span>
-                                <h4> 
-                                    <a class="post-link" href="{{ post.url | relative_url }}index.html">{{ post.title }}</a>
-                                </h4>
-                            </li>
-                        {% endif %}
-                    {% endfor %}
-                </ul>
-                <div class="category-footer">
-                    <a href="{{ site.baseurl }}/category/{{ category | downcase }}/" class="view-all">View all in {{ category }}</a>
+    <div class="category-row-container">
+        <div class="category-row">
+            {% assign categories = site.categories | sort %}
+            {% for category in categories %}
+                <div class="category-card">
+                    <h3>{{ category[0] }}:::</h3>
+                    <ul class="post-list">
+                        {% for post in category[1] limit:3 %}
+                        <li>
+                            {{ post.date | date: "%b %d, %Y" }}
+                            <br>
+                            <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+                        </li> 
+                        {% endfor %}
+                    </ul>
+                    <a href="{{ site.baseurl }}/category/{{ category[0] | downcase }}/" class="view-all">View all {{ category[1].size }} posts</a>
                 </div>
-            </div>
-        {% endfor %}
+            {% endfor %}
+        </div>
     </div>
 
-    <h2 class="post-list-heading">All posts</h2>
-    <ul class="post-list">
-        {% for post in site.posts %} 
-            <li>
-                <span class="post-meta">{{ post.date | date: "%b %d, %Y" }} in <a href="{{ site.baseurl }}/category/{{post.categories | first | downcase }}/"> {{ post.categories | first }}</a></span>
-                <h3> 
-                    <a class="post-link" href="{{ post.url | relative_url }}index.html">{{ post.title }}</a>
-                </h3>
-            </li> 
-        {% endfor %}
-    </ul>
+    <div class="feeling-lucky-container">
+        <button id="feeling-lucky-button" class="feeling-lucky-button" 
+          data-posts='{% assign posts = site.posts | map: "url" | jsonify %}{{ posts }}'>
+          I'm Feeling Lucky
+        </button>
+    </div>
+
+    <!-- <div class="home">
+        <h2 class="post-list-heading">All posts</h2>
+        <ul class="post-list">
+            {% for post in site.posts %} 
+                <li>
+                    <span class="post-meta">{{ post.date | date: "%b %d, %Y" }} in <a href="{{ site.baseurl }}/category/{{post.categories | first | downcase }}/"> {{ post.categories | first }}</a></span>
+                    <h3> 
+                        <a class="post-link" href="{{ post.url | relative_url }}index.html">{{ post.title }}</a>
+                    </h3>
+                </li> 
+            {% endfor %}
+        </ul>
+    </div> -->
 </div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var luckyButton = document.getElementById('feeling-lucky-button');
+      
+      if (luckyButton) {
+        luckyButton.addEventListener('click', function(e) {
+          e.preventDefault();
+          
+          // Get all post URLs from the data attribute
+          var posts = JSON.parse(this.getAttribute('data-posts'));
+          
+          if (posts.length > 0) {
+            // Select a random post
+            var randomIndex = Math.floor(Math.random() * posts.length);
+            var randomPost = posts[randomIndex];
+            
+            // Navigate to the random post
+            window.location.href = randomPost;
+          }
+        });
+      }
+    });
+    </script>

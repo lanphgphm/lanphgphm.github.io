@@ -7,13 +7,17 @@ categories: "OutOfDistribution::"
 
 I found cool people and their traces online. I'd like to make a collection for future references and for the fact that I always want to know what people are up to.         
 
-https://lewtds.notion.site/To-the-Root-of-the-Tree-dc170bf0e8de44a6b812ca3e01025236?p=9b12cc2fcdbe43149b10eefc7db6b161&pm=s     
-https://github.com/lewtds/bogo-prolog/tree/master   
+1. lewtds       
+- [Unikey typing interface on Linux](https://lewtds.notion.site/To-the-Root-of-the-Tree-dc170bf0e8de44a6b812ca3e01025236?p=9b12cc2fcdbe43149b10eefc7db6b161&pm=s)     
+- [A typing interface in prolog](https://github.com/lewtds/bogo-prolog/tree/master) 
 
+2. vanhger  
+- [Personal distributed storage on Etherium](https://vanhger.github.io/Blog/Software/2024-07-24-private-distributed-storage.html)     
+- [Motivation, meaning of life](https://vanhger.github.io/Blog/Life/2024-27-08-mat-dong-luc.html)        
 
-https://vanhger.github.io/Blog/Software/2024-07-24-private-distributed-storage.html     
-https://vanhger.github.io/Blog/Life/2024-27-08-mat-dong-luc.html        
-
-Also, look at these crazy commit patterns:      
+### Also, look at these crazy commit patterns:      
 ![alt text](/images/broccoli.png)       
+A literal broccoli head pattern :) 
+
 ![alt text](/images/ny-resolution.png)      
+This seems like a successfull new year's resolution    
