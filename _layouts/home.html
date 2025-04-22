@@ -1,8 +1,52 @@
+<!-- ---
+layout: default 
+---
+
+<div class="home">
+    <h2 class="post-list-heading">All posts</h2>
+    <ul class="post-list">
+        {% for post in site.posts %} 
+            <li>
+                <span class="post-meta">{{ post.date | date: "%b %d, %Y" }} in <a href="{{ site.baseurl }}/category/{{post.categories | first | downcase }}/"> {{ post.categories | first }}</a></span>
+                <h3> 
+                    <a class="post-link" href="{{ post.url | relative_url }}index.html">{{ post.title }}</a>
+                </h3>
+            </li> 
+        {% endfor %}
+    </ul>
+</div> -->
+
 ---
 layout: default 
 ---
 
 <div class="home">
+    <h2 class="category-heading">Posts by Category</h2>
+    
+    <div class="category-container">
+        {% assign categories = site.posts | map: "categories" | flatten | uniq %}
+        {% for category in categories %}
+            <div class="category-card">
+                <h3 class="category-title">{{ category }}</h3>
+                <ul class="category-post-list">
+                    {% for post in site.posts %}
+                        {% if post.categories contains category %}
+                            <li>
+                                <span class="post-meta">{{ post.date | date: "%b %d, %Y" }}</span>
+                                <h4> 
+                                    <a class="post-link" href="{{ post.url | relative_url }}index.html">{{ post.title }}</a>
+                                </h4>
+                            </li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+                <div class="category-footer">
+                    <a href="{{ site.baseurl }}/category/{{ category | downcase }}/" class="view-all">View all in {{ category }}</a>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
     <h2 class="post-list-heading">All posts</h2>
     <ul class="post-list">
         {% for post in site.posts %} 
