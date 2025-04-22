@@ -12,6 +12,7 @@ pkgs.mkShell {
   ];
 
   shellHook = ''
+    zsh
     # Set GEM_HOME 
     export GEM_HOME=$PWD/.gem
     export GEM_PATH=$GEM_HOME
