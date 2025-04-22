@@ -3,14 +3,14 @@ layout: default
 ---
 
 <div class="home">
-    <h2 class="post-list-heading">Posts by Category</h2>
+    <h2 class="post-list-heading">All posts by Category</h2>
     
     <div class="category-row-container">
         <div class="category-row">
             {% assign categories = site.categories | sort %}
             {% for category in categories %}
                 <div class="category-card">
-                    <h3>{{ category[0] }}:::</h3>
+                    <h3>{{ category[0] }}</h3>
                     <ul class="post-list">
                         {% for post in category[1] limit:3 %}
                         <li>
