@@ -12,14 +12,14 @@ Read [this writing](https://eli.thegreenplace.net/2016/the-expression-problem-an
 ## 1. What is the advantage/disadvantage of object-oriented programming (OOP)?
 - Pro: Easier to add new data type (Class)
 - Con: Harder to add new data action (Method/Operation)    
-![alt text](image.png)
+![alt text](/images/oop-matrix.png)
 
 **Reason**: In OOP, methods (functions) are not first-class citizens, a function must always be wrapped within a class, even if it means the class has no data fields. This tight coupling means if one method is added to a class A, it starts domino-ing to the classes that inherit froms, extends, interact with that class A. 
 
 ## 2. What is the advantage/disadvantage of functional programming (FP)?
 - Pro: Easier to add a new data operation (function)
 - Con: Harder to add a new data type    
-![alt text](image-1.png)
+![alt text](/images/fp-matrix.png)
 
 **Reason**: In FP, functions are first-class citizens. Pure FP makes "class" a meaningless construct. There is no class, only functions, which means each and every function is subjected to be used on all types of data. This means all functions must inherently account for all kinds of data. Adding a new type means updating all functions to recognize this new type. 
 
