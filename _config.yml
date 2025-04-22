@@ -16,7 +16,7 @@
 title: Into the Namespaces
 email: lanphuongpham02@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
-  Breathe in a lung of toxic air, and keep longing for death.
+  Forever in an endless pursuit of excellence
 baseurl: '' # the subpath of your site, e.g. /blog
 url: 'https://lanphgphm.github.io/' # the base hostname & protocol for your site, e.g. http://example.com
 permalink: /:categories/:year/:month/:day/:title/
