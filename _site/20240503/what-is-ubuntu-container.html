@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+	<link rel="stylesheet" href="/assets/css/atom-one-light.css">
+    
+        <title>What is an Ubuntu Container?</title>
+		<link rel="stylesheet" type="text/css" href="/assets/css/002.css">
+    
+	<link rel="stylesheet" href="/assets/css/font-awesome.min.css">
+	<link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon">
+	<link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
+	<script src="/assets/js/highlight.pack.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+</head>
+<body>
+	<div class="wrapper">
+		<div class="default_title">
+			<img src="/assets/img/mycomputer.png" />
+			
+				<h1>Into the Namespaces</h1>
+			
+		</div>
+		<ul class="topbar">
+	<a href="/me"><li><u>A</u>bout</li></a>
+	<a href="https://www.linkedin.com/in/lanphuongpham02/" target="_blank"><li><u>L</u>inkedIn</li></a>
+	<a href="https://github.com/lanphgphm" target="_blank"><li><u>G</u>ithub</li></a>
+	<a href="https://gitlab.com/lanphgphm" target="_blank"><li><u>G</u>itlab</li></a>
+</ul>
+
+		<div class="tag_list">
+			<ul id="tag-list">
+				<li><a href="/" ><img src="/assets/img/disk.png" />(NS:)</a>
+			<ul>
+				
+				
+				<li><a href="/tag/learning/" title="Learning::"><img src="/assets/img/folder.ico" />Learning::</a></li>
+				
+				<li><a href="/tag/musing/" title="Musing::"><img src="/assets/img/folder.ico" />Musing::</a></li>
+				
+				<li><a href="/tag/outofdistribution/" title="OutOfDistribution::"><img src="/assets/img/folder.ico" />OutOfDistribution::</a></li>
+				
+			</ul>
+				</li>
+			</ul>
+		</div>
+		<div class="post_list">
+			
+				<ul>
+					
+					<li><a href="/20250422/pursuit-of-excellence" title="Pursuit of excellence"><img src="/assets/img/file.ico" title="Pursuit of excellence" />Pursuit of excellence</a></li>
+					
+					<li><a href="/20250422/what-people-are-up-to" title="Cool people I found and things they're up to"><img src="/assets/img/file.ico" title="Cool people I found and things they're up to" />Cool people I found and things they're up to</a></li>
+					
+					<li><a href="/20250422/expression-problem" title="FP vs. OOP on the Expression problem"><img src="/assets/img/file.ico" title="FP vs. OOP on the Expression problem" />FP vs. OOP on the Expression problem</a></li>
+					
+					<li><a href="/20250126/breathe-in" title="Breathe in a lung of toxic air, and keep longing for death"><img src="/assets/img/file.ico" title="Breathe in a lung of toxic air, and keep longing for death" />Breathe in a lung of toxic air, and keep longing for death</a></li>
+					
+					<li><a href="/20240613/insecure-programming" title="Insecure Programming"><img src="/assets/img/file.ico" title="Insecure Programming" />Insecure Programming</a></li>
+					
+					<li><a href="/20240503/what-is-ubuntu-container" title="What is an Ubuntu Container?"><img src="/assets/img/file.ico" title="What is an Ubuntu Container?" />What is an Ubuntu Container?</a></li>
+					
+					<li><a href="/20240429/information-within-structure" title="Information within Structure"><img src="/assets/img/file.ico" title="Information within Structure" />Information within Structure</a></li>
+					
+					<li><a href="/20240426/linux-file-permission" title="Linux File Permission"><img src="/assets/img/file.ico" title="Linux File Permission" />Linux File Permission</a></li>
+					
+					<li><a href="/20240424/learning-it-hard" title="Learning It Hard"><img src="/assets/img/file.ico" title="Learning It Hard" />Learning It Hard</a></li>
+					
+					<li><a href="/20231029/archlinux-installation" title="Archlinux Installation"><img src="/assets/img/file.ico" title="Archlinux Installation" />Archlinux Installation</a></li>
+					
+					<li><a href="/20170916/markdown-test-page" title="Markdown Test Page"><img src="/assets/img/file.ico" title="Markdown Test Page" />Markdown Test Page</a></li>
+					
+				</ul>
+			
+		</div>
+		<div class="post_total">
+			
+				<div class="left">11 object(s)</div>
+			
+			<div class="right">&nbsp;</div>
+		</div>
+	</div>
+	
+        <div class="content">
+			<div class="post_title">
+				<img src="/assets/img/file.png" />
+				<h1>What is an Ubuntu Container?</h1>
+				<a href="/"><div class="btn"><span class="fa fa-times"></span></div></a>
+				<div class="btn btn_max"><span class="fa fa-window-maximize"></span></div>
+				<div class="btn"><span class="fa fa-window-minimize"></span></div>
+			</div>
+			<ul class="topbar">
+				<li>May 3, 2024</li>
+			</ul>
+			<div class="post_content">
+        		<p>khi chạy ubuntu docker container, chính xác là mình đang chạy cái gì vậy?</p>
+
+<p>nếu chạy ubuntu virtual machine, thì là mình đang chạy hệ điều hành ubuntu, kernel linux, trong một môi trường được cô lập và giám sát bởi hypervisor.</p>
+
+<p>nếu chạy mysql trong docker container, thì là mình đang chia sẻ tài nguyên của hệ điều hành máy chủ (ví dụ như của tôi là arch), nhưng cái container nó blind với tài nguyên nằm ngoài những gì nó được cho phép nhìn thấy, và nó tưởng nó có filesystem riêng. mọi tính năng như kiểu task scheduler, package manager, v.v. đều là do hệ điều hành máy chủ quản lý.</p>
+
+<p>nếu container không được quyết định hệ điều hành và không có kernel của riêng mình, thì tại sao concept về “ubuntu docker container” lại tồn tại và không contradictory? ubuntu docker container không thể có kernel, chắc chắn nó phải dùng kernel của host OS, nhưng tại sao nó có package manager, update và upgrade được? nó share kernel nhưng cô lập hết process và tài nguyên à?</p>
+
+<p>“tại sao khái niệm ubuntu docker container tồn tại mà không contradictory?”</p>
+
+<p>đầu tiên, lý do mình có câu hỏi này là vì mình hiểu container và virtual machine là hai khái niệm khác hẳn nhau. đúng là có sự khác biệt nhưng có rất nhiều chỗ giống, mình quá tập trung vào cái khác nên mới thấy ý tưởng về một container giả lập một hệ điều hành là contradictory.</p>
+
+<p>2 định nghĩa mình tự viết lại theo cách hiểu:</p>
+
+<p>hệ điều hành là gì? hệ điều hành là phần mềm quản lý tài nguyên và điều phối tiến trình. chương trình quan trọng nhất của hệ điều hành là hạt nhân (kernel), kernel quản lý memory (space), quản lý các process chạy trên máy, quản lý các thiết bị gắn vào cái máy (bàn phím, màn hình, chuột).</p>
+
+<p><img src="/images/what-is-ubuntu-container-1.jpg" alt="operating system illustration" /></p>
+
+<p>container là gì? container là một nhóm các process bị cô lập (có vùng bộ nhớ riêng, không thể access (đọc, viết, chạy) ra các vùng nhớ bên ngoài những gì nó được cấp). một container chạy như một process bình thường trên hệ điều hành host, hệ điều hành host biết là container tồn tại cùng với tất cả các process khác tồn tại. container không biết có process khác tồn tại trên cùng cái máy chủ mà nó đang chạy trên.</p>
+
+<p><img src="/images/what-is-ubuntu-container-2.jpg" alt="virtual machine vs. container illustration" /></p>
+
+<p>câu trả lời cho câu hỏi: một docker image có thể appear như một hệ điều hành ảo, nhưng thực ra docker image này đang share kernel với host. một cái virtual machine sẽ dùng kernel của riêng nó (load kernel mới bên trong kernel của host OS), và hypervisor (nằm trên phần cứng) sẽ chia tài nguyên cho hai kernel. một cái container sẽ chạy kernel đã có sẵn trên máy chủ, và tài nguyên chia cho container và các process còn lại bởi hệ điều hành (không cần hypervisor).</p>
+
+<p>ubuntu docker container mà chạy trên archlinux thì có nghĩa là ubuntu container và archlinux đang cùng share một linux kernel. điều đáng chú ý là linux kernel có khả năng cô lập tài nguyên (bằng namespace và cgroups), docker, kubernettes, hay bất cứ một công nghệ đóng container nào khác cũng chỉ đang khai thác các tính năng đã có sẵn, được cung cấp bởi linux kernel này thôi. điều này có nghĩa là một docker OS container có chạy tốt được không hoàn toàn phụ thuộc vào việc hệ điều hành nó cố chạy có tương thích với kernel của máy chủ hay không.</p>
+
+<p>một docker OS container có chạy tốt hay không hoàn toàn phụ thuộc vào việc hệ điều hành container này muốn chạy có tương thích với kernel của hệ điều hành máy chủ hay không.</p>
+
+<p>ví dụ: centOS 5 và 6 chỉ support bash với kernel version nhỏ hơn 4.19. nếu máy chủ dùng kernel bản &gt;= 4.19, rồi host một cái docker container cho centOS 5, rồi trong container này chạy lệnh /bin/bash, thì sẽ không thể chạy được bash trong container này.</p>
+
+<p>ví dụ phổ biến hơn: nếu đòi chạy docker container cho ubuntu trên windows : D thì khỏi chạy được luôn. kiến trúc kernel của linux là monolithic kernel, kiến trúc kernel của windows là hybrid kernel, chắc chắn sẽ không compatible ở nhiều chỗ, chạy là break nhanh luôn. nhưng cái này không đặc biệt gì với docker OS container. docker container nào cũng cần linux để chạy, nên nếu mình chạy được docker trên máy windows là docker đã tự bật máy áo linux lên trong windows, rồi chạy docker container trong chính máy ảo linux đó. nếu dùng hệ điều hành windows mà hoàn toàn không support máy ảo (tức không có hypervisor–windows cũ quá có thể bị) thì là không chạy được docker tí nào luôn.</p>
+
+<p>vậy nên chốt lại: ubuntu docker container bao gồm các process được cô lập y như các process khác trên máy. docker container càng compatible với kernel máy chủ càng tốt, còn nếu không compatible đến mức không chấp nhận được thì phải chạy docker trong máy ảo.</p>
+
+				
+					<br>
+<hr>
+<br>
+<div class="donate">
+	<p>Did you like of something here? How about we get in touch?<br>
+	I'll appreciate it!</p>
+	<ul>
+		<li><a href="https://www.linkedin.com/in/lanphuongpham02/" target="_blank">LinkedIn</a></li>
+		<li><a href="https://github.com/lanphgphm" target="_blank">Github</a></li>
+		<li><a href="https://gitlab.com/lanphgphm" target="_blank">GitLab</a></li>
+		<li><a href="/me">About</a></li>
+	</ul>
+</div>
+				
+			</div>
+		</div>
+    
+	<script src="/assets/js/001.js"></script>
+	<script src="/assets/js/002.js"></script>
+	<script src="/assets/js/highlight.pack.js"></script>
+	<div class="footer">
+		<p>Namespace of <a href="https://github.com/lanphgphm" target="_blank">lanphgphm</a> | Theme from <a href="http://github.com/h01000110" target="_blank">h01000110 (hi)</a> licensed under <a href="https://github.com/h01000110/h01000110.github.io/blob/master/LICENSE" target="_blank">MIT License</a></p>
+	</div>
+</body>
+</html>

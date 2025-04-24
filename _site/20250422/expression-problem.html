@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+	<link rel="stylesheet" href="/assets/css/atom-one-light.css">
+    
+        <title>FP vs. OOP on the Expression problem</title>
+		<link rel="stylesheet" type="text/css" href="/assets/css/002.css">
+    
+	<link rel="stylesheet" href="/assets/css/font-awesome.min.css">
+	<link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon">
+	<link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
+	<script src="/assets/js/highlight.pack.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+</head>
+<body>
+	<div class="wrapper">
+		<div class="default_title">
+			<img src="/assets/img/mycomputer.png" />
+			
+				<h1>Into the Namespaces</h1>
+			
+		</div>
+		<ul class="topbar">
+	<a href="/me"><li><u>A</u>bout</li></a>
+	<a href="https://www.linkedin.com/in/lanphuongpham02/" target="_blank"><li><u>L</u>inkedIn</li></a>
+	<a href="https://github.com/lanphgphm" target="_blank"><li><u>G</u>ithub</li></a>
+	<a href="https://gitlab.com/lanphgphm" target="_blank"><li><u>G</u>itlab</li></a>
+</ul>
+
+		<div class="tag_list">
+			<ul id="tag-list">
+				<li><a href="/" ><img src="/assets/img/disk.png" />(NS:)</a>
+			<ul>
+				
+				
+				<li><a href="/tag/learning/" title="Learning::"><img src="/assets/img/folder.ico" />Learning::</a></li>
+				
+				<li><a href="/tag/musing/" title="Musing::"><img src="/assets/img/folder.ico" />Musing::</a></li>
+				
+				<li><a href="/tag/outofdistribution/" title="OutOfDistribution::"><img src="/assets/img/folder.ico" />OutOfDistribution::</a></li>
+				
+			</ul>
+				</li>
+			</ul>
+		</div>
+		<div class="post_list">
+			
+				<ul>
+					
+					<li><a href="/20250422/pursuit-of-excellence" title="Pursuit of excellence"><img src="/assets/img/file.ico" title="Pursuit of excellence" />Pursuit of excellence</a></li>
+					
+					<li><a href="/20250422/what-people-are-up-to" title="Cool people I found and things they're up to"><img src="/assets/img/file.ico" title="Cool people I found and things they're up to" />Cool people I found and things they're up to</a></li>
+					
+					<li><a href="/20250422/expression-problem" title="FP vs. OOP on the Expression problem"><img src="/assets/img/file.ico" title="FP vs. OOP on the Expression problem" />FP vs. OOP on the Expression problem</a></li>
+					
+					<li><a href="/20250126/breathe-in" title="Breathe in a lung of toxic air, and keep longing for death"><img src="/assets/img/file.ico" title="Breathe in a lung of toxic air, and keep longing for death" />Breathe in a lung of toxic air, and keep longing for death</a></li>
+					
+					<li><a href="/20240613/insecure-programming" title="Insecure Programming"><img src="/assets/img/file.ico" title="Insecure Programming" />Insecure Programming</a></li>
+					
+					<li><a href="/20240503/what-is-ubuntu-container" title="What is an Ubuntu Container?"><img src="/assets/img/file.ico" title="What is an Ubuntu Container?" />What is an Ubuntu Container?</a></li>
+					
+					<li><a href="/20240429/information-within-structure" title="Information within Structure"><img src="/assets/img/file.ico" title="Information within Structure" />Information within Structure</a></li>
+					
+					<li><a href="/20240426/linux-file-permission" title="Linux File Permission"><img src="/assets/img/file.ico" title="Linux File Permission" />Linux File Permission</a></li>
+					
+					<li><a href="/20240424/learning-it-hard" title="Learning It Hard"><img src="/assets/img/file.ico" title="Learning It Hard" />Learning It Hard</a></li>
+					
+					<li><a href="/20231029/archlinux-installation" title="Archlinux Installation"><img src="/assets/img/file.ico" title="Archlinux Installation" />Archlinux Installation</a></li>
+					
+					<li><a href="/20170916/markdown-test-page" title="Markdown Test Page"><img src="/assets/img/file.ico" title="Markdown Test Page" />Markdown Test Page</a></li>
+					
+				</ul>
+			
+		</div>
+		<div class="post_total">
+			
+				<div class="left">11 object(s)</div>
+			
+			<div class="right">&nbsp;</div>
+		</div>
+	</div>
+	
+        <div class="content">
+			<div class="post_title">
+				<img src="/assets/img/file.png" />
+				<h1>FP vs. OOP on the Expression problem</h1>
+				<a href="/"><div class="btn"><span class="fa fa-times"></span></div></a>
+				<div class="btn btn_max"><span class="fa fa-window-maximize"></span></div>
+				<div class="btn"><span class="fa fa-window-minimize"></span></div>
+			</div>
+			<ul class="topbar">
+				<li>April 22, 2025</li>
+			</ul>
+			<div class="post_content">
+        		<p>This was part of my assignments in Programming Language Paradigms, instructed by Dr. Huynh Viet Linh, Spring 2025. It was so informative and eye-opening for myself that I thought I would repost to archive.</p>
+
+<p>Read <a href="https://eli.thegreenplace.net/2016/the-expression-problem-and-its-solutions">this writing</a> and answer (based on the writing above) to these questions</p>
+
+<h2 id="1-what-is-the-advantagedisadvantage-of-object-oriented-programming-oop">1. What is the advantage/disadvantage of object-oriented programming (OOP)?</h2>
+<ul>
+  <li>Pro: Easier to add new data type (Class)</li>
+  <li>Con: Harder to add new data action (Method/Operation)  <br />
+<img src="/images/oop-matrix.png" alt="alt text" /></li>
+</ul>
+
+<p><strong>Reason</strong>: In OOP, methods (functions) are not first-class citizens, a function must always be wrapped within a class, even if it means the class has no data fields. This tight coupling means if one method is added to a class A, it starts domino-ing to the classes that inherit froms, extends, interact with that class A.</p>
+
+<h2 id="2-what-is-the-advantagedisadvantage-of-functional-programming-fp">2. What is the advantage/disadvantage of functional programming (FP)?</h2>
+<ul>
+  <li>Pro: Easier to add a new data operation (function)</li>
+  <li>Con: Harder to add a new data type  <br />
+<img src="/images/fp-matrix.png" alt="alt text" /></li>
+</ul>
+
+<p><strong>Reason</strong>: In FP, functions are first-class citizens. Pure FP makes “class” a meaningless construct. There is no class, only functions, which means each and every function is subjected to be used on all types of data. This means all functions must inherently account for all kinds of data. Adding a new type means updating all functions to recognize this new type.</p>
+
+<h2 id="3-how-to-overcome-of-the-disadvantage-of-oop">3. How to overcome of the disadvantage of OOP?</h2>
+<p><strong>Problem</strong>: Hard to add new method   <br />
+<strong>Solution</strong>:</p>
+<ol>
+  <li>
+    <p>Visitor pattern<br />
+ Each time new type X is added and new way of handling type X is needed, created a XVisitor function and add this XVisitor to the shared Visit().</p>
+
+    <p>We still need to change existing code, but it is minimal in the sense that we need to add a new case (switch-case) in the base Visit() method only, and all other visitors can be left untouched.</p>
+
+    <p>But, in this sense, we have made it harder to add new type, because adding new type means we have to go back and update the base Visitor() function. This turns the problem of OOP closer to the problem in FP.</p>
+  </li>
+  <li>
+    <p>Dynamic cast     <br />
+ At runtime, perform checks to see if the pointer to the base class (Expr) can be casted to the derived class (FunctionCallExpr), if can, cast it, and now we have an expression that is capable of evaluating function call expressions.  <br />
+ –&gt; Less performant, less safe – the cast can fail which requires extra logic to handle.</p>
+
+    <blockquote>
+      <p>“Adding one new type looks manageable; what about adding 15 new types, gradually over time? Imagine the horrible zoo of ExprVisitor extensions and dynamic checks this would lead to.”</p>
+    </blockquote>
+  </li>
+  <li>
+    <p>Dynamic dispatch   <br />
+ At runtime, decide which implementation of a method to use after checking the type of the object (Evaluate or EvaluateWithFunctionCall).</p>
+
+    <p>This highlights how dynamic dispatch is not great for backwards compatibility: In a massive project where we don’t control all the instances, the new code (that accomodate for a new type like FunctionCall) might break other instances of Evaluator that we don’t control</p>
+
+    <blockquote>
+      <p>“If we have an instance of an Evaluator, it will no longer work on the whole extended expression tree since it has no understanding of FunctionCall. It’s easy to say that all new evaluators should rather be EvaluatorWithFunctionCall, but we don’t always control this. What about code that was already written? What about Evaluators created in third-party or library code which we have no control of?”</p>
+    </blockquote>
+  </li>
+</ol>
+
+<h2 id="4-how-to-overcome-the-disadvantage-of-fp">4. How to overcome the disadvantage of FP?</h2>
+<p><strong>Problem</strong>: Hard to add new type <br />
+<strong>Solution</strong>:</p>
+
+<ol>
+  <li>
+    <p>Multi-method – parameterized dynamic dispatch  <br />
+ OOP dynamic dispatch offers one policy to decide which method implementation to dispatch: checks the type of object at runtime. In this sense, functions’ behavior are still controlled by object type –&gt; still second class citizens.</p>
+
+    <p>Clojure’s multi-method is also dynamic dispatch, but it is <strong>parameterized</strong> dynamic dispatch–meaning it allows user to decide which method to dispatch by providing a type argument–effectively giving all the dispatch control to the user. Functions can now be dispatched at user’s will, not bounded to any type.</p>
+  </li>
+  <li>
+    <p>Protocols  <br />
+ I don’t understand the details enough at this point to say why protocols are wonderful, I’m just echoing the author’s point as part of the answer to this question with a Clojure document:</p>
+
+    <blockquote>
+      <p>“Avoid the ‘expression problem’ by allowing independent extension of the set of types, protocols, and implementations of protocols on types, by different parties […] without wrappers/adapters”</p>
+    </blockquote>
+
+    <p>So it’s probably like having a pool of functions, then give language user power to implement their own dynamic dispatch policy by parameterize traditional type-bound dynamic dispatch.</p>
+  </li>
+</ol>
+
+				
+					<br>
+<hr>
+<br>
+<div class="donate">
+	<p>Did you like of something here? How about we get in touch?<br>
+	I'll appreciate it!</p>
+	<ul>
+		<li><a href="https://www.linkedin.com/in/lanphuongpham02/" target="_blank">LinkedIn</a></li>
+		<li><a href="https://github.com/lanphgphm" target="_blank">Github</a></li>
+		<li><a href="https://gitlab.com/lanphgphm" target="_blank">GitLab</a></li>
+		<li><a href="/me">About</a></li>
+	</ul>
+</div>
+				
+			</div>
+		</div>
+    
+	<script src="/assets/js/001.js"></script>
+	<script src="/assets/js/002.js"></script>
+	<script src="/assets/js/highlight.pack.js"></script>
+	<div class="footer">
+		<p>Namespace of <a href="https://github.com/lanphgphm" target="_blank">lanphgphm</a> | Theme from <a href="http://github.com/h01000110" target="_blank">h01000110 (hi)</a> licensed under <a href="https://github.com/h01000110/h01000110.github.io/blob/master/LICENSE" target="_blank">MIT License</a></p>
+	</div>
+</body>
+</html>

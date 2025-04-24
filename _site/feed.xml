@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2025-04-24T06:44:56+00:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Into the Namespaces</title><subtitle>Forever in an endless pursuit of excellence</subtitle><entry><title type="html">FP vs. OOP on the Expression problem</title><link href="http://localhost:4000/20250422/expression-problem" rel="alternate" type="text/html" title="FP vs. OOP on the Expression problem" /><published>2025-04-22T00:00:00+00:00</published><updated>2025-04-22T00:00:00+00:00</updated><id>http://localhost:4000/20250422/expression-problem</id><content type="html" xml:base="http://localhost:4000/20250422/expression-problem"><![CDATA[<p>This was part of my assignments in Programming Language Paradigms, instructed by Dr. Huynh Viet Linh, Spring 2025. It was so informative and eye-opening for myself that I thought I would repost to archive.</p>
+
+<p>Read <a href="https://eli.thegreenplace.net/2016/the-expression-problem-and-its-solutions">this writing</a> and answer (based on the writing above) to these questions</p>
+
+<h2 id="1-what-is-the-advantagedisadvantage-of-object-oriented-programming-oop">1. What is the advantage/disadvantage of object-oriented programming (OOP)?</h2>
+<ul>
+  <li>Pro: Easier to add new data type (Class)</li>
+  <li>Con: Harder to add new data action (Method/Operation)  <br />
+<img src="/images/oop-matrix.png" alt="alt text" /></li>
+</ul>
+
+<p><strong>Reason</strong>: In OOP, methods (functions) are not first-class citizens, a function must always be wrapped within a class, even if it means the class has no data fields. This tight coupling means if one method is added to a class A, it starts domino-ing to the classes that inherit froms, extends, interact with that class A.</p>
+
+<h2 id="2-what-is-the-advantagedisadvantage-of-functional-programming-fp">2. What is the advantage/disadvantage of functional programming (FP)?</h2>
+<ul>
+  <li>Pro: Easier to add a new data operation (function)</li>
+  <li>Con: Harder to add a new data type  <br />
+<img src="/images/fp-matrix.png" alt="alt text" /></li>
+</ul>
+
+<p><strong>Reason</strong>: In FP, functions are first-class citizens. Pure FP makes “class” a meaningless construct. There is no class, only functions, which means each and every function is subjected to be used on all types of data. This means all functions must inherently account for all kinds of data. Adding a new type means updating all functions to recognize this new type.</p>
+
+<h2 id="3-how-to-overcome-of-the-disadvantage-of-oop">3. How to overcome of the disadvantage of OOP?</h2>
+<p><strong>Problem</strong>: Hard to add new method   <br />
+<strong>Solution</strong>:</p>
+<ol>
+  <li>
+    <p>Visitor pattern<br />
+ Each time new type X is added and new way of handling type X is needed, created a XVisitor function and add this XVisitor to the shared Visit().</p>
+
+    <p>We still need to change existing code, but it is minimal in the sense that we need to add a new case (switch-case) in the base Visit() method only, and all other visitors can be left untouched.</p>
+
+    <p>But, in this sense, we have made it harder to add new type, because adding new type means we have to go back and update the base Visitor() function. This turns the problem of OOP closer to the problem in FP.</p>
+  </li>
+  <li>
+    <p>Dynamic cast     <br />
+ At runtime, perform checks to see if the pointer to the base class (Expr) can be casted to the derived class (FunctionCallExpr), if can, cast it, and now we have an expression that is capable of evaluating function call expressions.  <br />
+ –&gt; Less performant, less safe – the cast can fail which requires extra logic to handle.</p>
+
+    <blockquote>
+      <p>“Adding one new type looks manageable; what about adding 15 new types, gradually over time? Imagine the horrible zoo of ExprVisitor extensions and dynamic checks this would lead to.”</p>
+    </blockquote>
+  </li>
+  <li>
+    <p>Dynamic dispatch   <br />
+ At runtime, decide which implementation of a method to use after checking the type of the object (Evaluate or EvaluateWithFunctionCall).</p>
+
+    <p>This highlights how dynamic dispatch is not great for backwards compatibility: In a massive project where we don’t control all the instances, the new code (that accomodate for a new type like FunctionCall) might break other instances of Evaluator that we don’t control</p>
+
+    <blockquote>
+      <p>“If we have an instance of an Evaluator, it will no longer work on the whole extended expression tree since it has no understanding of FunctionCall. It’s easy to say that all new evaluators should rather be EvaluatorWithFunctionCall, but we don’t always control this. What about code that was already written? What about Evaluators created in third-party or library code which we have no control of?”</p>
+    </blockquote>
+  </li>
+</ol>
+
+<h2 id="4-how-to-overcome-the-disadvantage-of-fp">4. How to overcome the disadvantage of FP?</h2>
+<p><strong>Problem</strong>: Hard to add new type <br />
+<strong>Solution</strong>:</p>
+
+<ol>
+  <li>
+    <p>Multi-method – parameterized dynamic dispatch  <br />
+ OOP dynamic dispatch offers one policy to decide which method implementation to dispatch: checks the type of object at runtime. In this sense, functions’ behavior are still controlled by object type –&gt; still second class citizens.</p>
+
+    <p>Clojure’s multi-method is also dynamic dispatch, but it is <strong>parameterized</strong> dynamic dispatch–meaning it allows user to decide which method to dispatch by providing a type argument–effectively giving all the dispatch control to the user. Functions can now be dispatched at user’s will, not bounded to any type.</p>
+  </li>
+  <li>
+    <p>Protocols  <br />
+ I don’t understand the details enough at this point to say why protocols are wonderful, I’m just echoing the author’s point as part of the answer to this question with a Clojure document:</p>
+
+    <blockquote>
+      <p>“Avoid the ‘expression problem’ by allowing independent extension of the set of types, protocols, and implementations of protocols on types, by different parties […] without wrappers/adapters”</p>
+    </blockquote>
+
+    <p>So it’s probably like having a pool of functions, then give language user power to implement their own dynamic dispatch policy by parameterize traditional type-bound dynamic dispatch.</p>
+  </li>
+</ol>]]></content><author><name></name></author><category term="Learning::" /><summary type="html"><![CDATA[This was part of my assignments in Programming Language Paradigms, instructed by Dr. Huynh Viet Linh, Spring 2025. It was so informative and eye-opening for myself that I thought I would repost to archive.]]></summary></entry><entry><title type="html">Cool people I found and things they’re up to</title><link href="http://localhost:4000/20250422/what-people-are-up-to" rel="alternate" type="text/html" title="Cool people I found and things they’re up to" /><published>2025-04-22T00:00:00+00:00</published><updated>2025-04-22T00:00:00+00:00</updated><id>http://localhost:4000/20250422/what-people-are-up-to</id><content type="html" xml:base="http://localhost:4000/20250422/what-people-are-up-to"><![CDATA[<p>I found cool people and their traces online. I’d like to make a collection for future references and for the fact that I always want to know what people are up to.</p>
+
+<ol>
+  <li>lewtds
+    <ul>
+      <li><a href="https://lewtds.notion.site/To-the-Root-of-the-Tree-dc170bf0e8de44a6b812ca3e01025236?p=9b12cc2fcdbe43149b10eefc7db6b161&amp;pm=s">Unikey typing interface on Linux</a></li>
+      <li><a href="https://github.com/lewtds/bogo-prolog/tree/master">A typing interface in prolog</a></li>
+    </ul>
+  </li>
+  <li>vanhger
+    <ul>
+      <li><a href="https://vanhger.github.io/Blog/Software/2024-07-24-private-distributed-storage.html">Personal distributed storage on Etherium</a></li>
+      <li><a href="https://vanhger.github.io/Blog/Life/2024-27-08-mat-dong-luc.html">Motivation, meaning of life</a></li>
+    </ul>
+  </li>
+</ol>
+
+<h3 id="also-look-at-these-crazy-commit-patterns">Also, look at these crazy commit patterns:</h3>
+<p><img src="/images/broccoli.png" alt="alt text" />     <br />
+A literal broccoli head pattern :)</p>
+
+<p><img src="/images/ny-resolution.png" alt="alt text" />    <br />
+This seems like a successfull new year’s resolution</p>]]></content><author><name></name></author><category term="OutOfDistribution::" /><summary type="html"><![CDATA[I found cool people and their traces online. I’d like to make a collection for future references and for the fact that I always want to know what people are up to.]]></summary></entry><entry><title type="html">Pursuit of excellence</title><link href="http://localhost:4000/20250422/pursuit-of-excellence" rel="alternate" type="text/html" title="Pursuit of excellence" /><published>2025-04-22T00:00:00+00:00</published><updated>2025-04-22T00:00:00+00:00</updated><id>http://localhost:4000/20250422/pursuit-of-excellence</id><content type="html" xml:base="http://localhost:4000/20250422/pursuit-of-excellence"><![CDATA[<p>“All that endless pursuit of excellent, yet I am not excellent.”</p>
+
+<p>When learning something, I often grapple with the dilemma between whether to go deep or go wide. Specifically:</p>
+<ul>
+  <li>To get started, do I follow a series of rabbitholes, or browse around sibling concepts first?</li>
+  <li>When is the rabbithole too deep and I need to get back up?</li>
+  <li>When is the browsing too broad and start becoming irrelevant/distracting?</li>
+  <li>In the long run, how should I manage toggling between going deep and going wide?</li>
+</ul>
+
+<p>When I started college 4 years ago, I thought that I had spent enough time browsing in my high school years, and if I want to be excellent in anything, I had to be laser-focused for the rest of my degree. Maybe I was an edge case: I had been knee-deep in philosophy and humanities for the entirety of my high school, and I felt like I have to do significantly more work to catch up with people in tech around me who had experience and exposure since as early as middle school. With that, I went into Computer Science undisturbed, not really looking around, taking all the courses I think was relevant, at the same time foregoing all the courses I think do not directly contribute to my progress.</p>
+
+<p>I’m graduating in a month, with said Computer Science degree. I regretted none of it.</p>
+
+<p>But I have other doubts. Specifically, was I specializing too early on?</p>
+
+<p>Now, after I have had my first job, I am thinking about how I would progress next. What domain am I going to go into? What domains have the problems that tickles my fancy, that I can see myself working in for years down the line?</p>
+
+<p>And this is where I realized: I haven’t browsed enough. Going deep at this moment in time would mean keep doing whatever my first job is until it is undeniable that I have to switch. This decision felt too significant for me to handle in such mindless manner.</p>
+
+<p>So for now, going wide is probably my next move. I am personally not a believer of switching jobs only after 1-2 years, so to be able to balance both, I need to think very carefully, and ask as many people as I can.</p>
+
+<p>Even with a “next move” ready in queue, my head constantly looms around the thought that I might be fumbling without knowing. I know that I want to pursure technical excellence, but how do I know that the choices I make right now are the right ones, and that they would propel me towards that ultimate goal?</p>
+
+<p>What if, regardless of all that endless pursuit of excellent, I still wouldn’t be excellent?</p>]]></content><author><name></name></author><category term="Musing::" /><summary type="html"><![CDATA[“All that endless pursuit of excellent, yet I am not excellent.”]]></summary></entry><entry><title type="html">Breathe in a lung of toxic air, and keep longing for death</title><link href="http://localhost:4000/20250126/breathe-in" rel="alternate" type="text/html" title="Breathe in a lung of toxic air, and keep longing for death" /><published>2025-01-26T00:00:00+00:00</published><updated>2025-01-26T00:00:00+00:00</updated><id>http://localhost:4000/20250126/breathe-in</id><content type="html" xml:base="http://localhost:4000/20250126/breathe-in"><![CDATA[<p>I wrote this a long time ago, when life wasn’t as good, when I was at rock bottom, actually. At the time, the weight of this phrase falls into the later half. At the time, it felt like there was no way out, and life could only move up if I started anew.</p>
+
+<p>It is with great pride that I can say I’m no longer actively yearning for a sweet ending anymore.</p>
+
+<p>If I had not chose to live back then, I would not blame myself. But because I chose to live, I can say that it does get better. It does get better, doesn’t mean all that pain was “worth it”, doesn’t mean I became stronger in ways that is good for me. But it does get better, enough for me to keep trying.</p>
+
+<p>I am not a family-body. I have never experienced homesickness. I am grateful for my family to not making me feel guilty about moving far away, prancing around like a bird. I love my family, but not in the ways that I want to visit them every so often, but in the way that I’s like to take care of them from afar. My love for them is complicated, but I promise I’m trying.</p>
+
+<p>All my friends moved home this time of the year. All my strangers on the street moved home this time of the year. Saigon is so empty, in the literal sense that a street is not cluttered, but in the figurative sense that none of the people I am close with are here. I drove down the street yesterday, and while wandering aimlessly, I realized this is how I felt when I was very little. When I was 7, I ride my bike from school to a dark home, locked because both my parents are still at work. When I was 14, I decided to join đội tuyển học sinh giỏi without telling anyone. It’s the little things. It’s the little things that makes me the secretive person I am today. It’s the little things that makes me feel a twisted sense of comfort at the familiarity of loneliness. Yesterday, I really felt alone.</p>
+
+<p>But it was yesterday when I realized that the weight of this phrase no longer bears at the latter half. I no longer long for death the way I used to. I know that death looms around me, the people I love, and everyone whether I think about it or not. And until the inevitable comes, I will have to live life as-is. The air is toxic, the greed never ending, but life is worth living, and in the process of becoming the person I want to become, I will have to breathe in a lung of toxic air to keep it going.</p>
+
+<p>The air is toxic, but it sustains me to the best of its ability. My lungs are damaged from this air, but it sustains me to the best of its ability. And I too, no matter how tattered, will sustain the ecosystem around me to the best of my ability.</p>
+
+<p>What am I even saying.</p>]]></content><author><name></name></author><category term="Musing::" /><summary type="html"><![CDATA[I wrote this a long time ago, when life wasn’t as good, when I was at rock bottom, actually. At the time, the weight of this phrase falls into the later half. At the time, it felt like there was no way out, and life could only move up if I started anew.]]></summary></entry><entry><title type="html">Insecure Programming</title><link href="http://localhost:4000/20240613/insecure-programming" rel="alternate" type="text/html" title="Insecure Programming" /><published>2024-06-13T00:00:00+00:00</published><updated>2024-06-13T00:00:00+00:00</updated><id>http://localhost:4000/20240613/insecure-programming</id><content type="html" xml:base="http://localhost:4000/20240613/insecure-programming"><![CDATA[<p><code class="language-plaintext highlighter-rouge">printf()</code> của C lấy 2 argument chính, <code class="language-plaintext highlighter-rouge">printf(format_string, string_pointer_1, string_pointer_2...)</code>. <code class="language-plaintext highlighter-rouge">format_string</code> là cái <code class="language-plaintext highlighter-rouge">%s %d</code>, theo sau đó là một đống pointers đến các thứ cần đc inject vào string.</p>
+
+<p>các pointer kia được bỏ vào stack và <code class="language-plaintext highlighter-rouge">printf()</code> sẽ pop đủ số param trong stack sao cho fill đc hết các % trong <code class="language-plaintext highlighter-rouge">format_string</code>.</p>
+
+<p>nếu <code class="language-plaintext highlighter-rouge">format_string</code> không được supply đủ số pointer thì nó cũng chả biết, nó cứ nhìn vào format string và pop cho đủ thôi. vậy nêu bây giờ mình <code class="language-plaintext highlighter-rouge">printf(userInput)</code> mà <code class="language-plaintext highlighter-rouge">userInput = "%x.%x.%x.%x.%x"</code> là mình lấy đc 5 biến trong stack của chương trình ra đọc (mà đáng ra mình ko đc đọc).</p>
+
+<p>chương trình bố láo bố lếu rất hay. + 10 điểm nghịch ngợm.</p>
+
+<p><img src="/images/insecure-programming.jpg" alt="Insecure programming example" /></p>]]></content><author><name></name></author><category term="Learning::" /><summary type="html"><![CDATA[printf() của C lấy 2 argument chính, printf(format_string, string_pointer_1, string_pointer_2...). format_string là cái %s %d, theo sau đó là một đống pointers đến các thứ cần đc inject vào string.]]></summary></entry><entry><title type="html">What is an Ubuntu Container?</title><link href="http://localhost:4000/20240503/what-is-ubuntu-container" rel="alternate" type="text/html" title="What is an Ubuntu Container?" /><published>2024-05-03T00:00:00+00:00</published><updated>2024-05-03T00:00:00+00:00</updated><id>http://localhost:4000/20240503/what-is-ubuntu-container</id><content type="html" xml:base="http://localhost:4000/20240503/what-is-ubuntu-container"><![CDATA[<p>khi chạy ubuntu docker container, chính xác là mình đang chạy cái gì vậy?</p>
+
+<p>nếu chạy ubuntu virtual machine, thì là mình đang chạy hệ điều hành ubuntu, kernel linux, trong một môi trường được cô lập và giám sát bởi hypervisor.</p>
+
+<p>nếu chạy mysql trong docker container, thì là mình đang chia sẻ tài nguyên của hệ điều hành máy chủ (ví dụ như của tôi là arch), nhưng cái container nó blind với tài nguyên nằm ngoài những gì nó được cho phép nhìn thấy, và nó tưởng nó có filesystem riêng. mọi tính năng như kiểu task scheduler, package manager, v.v. đều là do hệ điều hành máy chủ quản lý.</p>
+
+<p>nếu container không được quyết định hệ điều hành và không có kernel của riêng mình, thì tại sao concept về “ubuntu docker container” lại tồn tại và không contradictory? ubuntu docker container không thể có kernel, chắc chắn nó phải dùng kernel của host OS, nhưng tại sao nó có package manager, update và upgrade được? nó share kernel nhưng cô lập hết process và tài nguyên à?</p>
+
+<p>“tại sao khái niệm ubuntu docker container tồn tại mà không contradictory?”</p>
+
+<p>đầu tiên, lý do mình có câu hỏi này là vì mình hiểu container và virtual machine là hai khái niệm khác hẳn nhau. đúng là có sự khác biệt nhưng có rất nhiều chỗ giống, mình quá tập trung vào cái khác nên mới thấy ý tưởng về một container giả lập một hệ điều hành là contradictory.</p>
+
+<p>2 định nghĩa mình tự viết lại theo cách hiểu:</p>
+
+<p>hệ điều hành là gì? hệ điều hành là phần mềm quản lý tài nguyên và điều phối tiến trình. chương trình quan trọng nhất của hệ điều hành là hạt nhân (kernel), kernel quản lý memory (space), quản lý các process chạy trên máy, quản lý các thiết bị gắn vào cái máy (bàn phím, màn hình, chuột).</p>
+
+<p><img src="/images/what-is-ubuntu-container-1.jpg" alt="operating system illustration" /></p>
+
+<p>container là gì? container là một nhóm các process bị cô lập (có vùng bộ nhớ riêng, không thể access (đọc, viết, chạy) ra các vùng nhớ bên ngoài những gì nó được cấp). một container chạy như một process bình thường trên hệ điều hành host, hệ điều hành host biết là container tồn tại cùng với tất cả các process khác tồn tại. container không biết có process khác tồn tại trên cùng cái máy chủ mà nó đang chạy trên.</p>
+
+<p><img src="/images/what-is-ubuntu-container-2.jpg" alt="virtual machine vs. container illustration" /></p>
+
+<p>câu trả lời cho câu hỏi: một docker image có thể appear như một hệ điều hành ảo, nhưng thực ra docker image này đang share kernel với host. một cái virtual machine sẽ dùng kernel của riêng nó (load kernel mới bên trong kernel của host OS), và hypervisor (nằm trên phần cứng) sẽ chia tài nguyên cho hai kernel. một cái container sẽ chạy kernel đã có sẵn trên máy chủ, và tài nguyên chia cho container và các process còn lại bởi hệ điều hành (không cần hypervisor).</p>
+
+<p>ubuntu docker container mà chạy trên archlinux thì có nghĩa là ubuntu container và archlinux đang cùng share một linux kernel. điều đáng chú ý là linux kernel có khả năng cô lập tài nguyên (bằng namespace và cgroups), docker, kubernettes, hay bất cứ một công nghệ đóng container nào khác cũng chỉ đang khai thác các tính năng đã có sẵn, được cung cấp bởi linux kernel này thôi. điều này có nghĩa là một docker OS container có chạy tốt được không hoàn toàn phụ thuộc vào việc hệ điều hành nó cố chạy có tương thích với kernel của máy chủ hay không.</p>
+
+<p>một docker OS container có chạy tốt hay không hoàn toàn phụ thuộc vào việc hệ điều hành container này muốn chạy có tương thích với kernel của hệ điều hành máy chủ hay không.</p>
+
+<p>ví dụ: centOS 5 và 6 chỉ support bash với kernel version nhỏ hơn 4.19. nếu máy chủ dùng kernel bản &gt;= 4.19, rồi host một cái docker container cho centOS 5, rồi trong container này chạy lệnh /bin/bash, thì sẽ không thể chạy được bash trong container này.</p>
+
+<p>ví dụ phổ biến hơn: nếu đòi chạy docker container cho ubuntu trên windows : D thì khỏi chạy được luôn. kiến trúc kernel của linux là monolithic kernel, kiến trúc kernel của windows là hybrid kernel, chắc chắn sẽ không compatible ở nhiều chỗ, chạy là break nhanh luôn. nhưng cái này không đặc biệt gì với docker OS container. docker container nào cũng cần linux để chạy, nên nếu mình chạy được docker trên máy windows là docker đã tự bật máy áo linux lên trong windows, rồi chạy docker container trong chính máy ảo linux đó. nếu dùng hệ điều hành windows mà hoàn toàn không support máy ảo (tức không có hypervisor–windows cũ quá có thể bị) thì là không chạy được docker tí nào luôn.</p>
+
+<p>vậy nên chốt lại: ubuntu docker container bao gồm các process được cô lập y như các process khác trên máy. docker container càng compatible với kernel máy chủ càng tốt, còn nếu không compatible đến mức không chấp nhận được thì phải chạy docker trong máy ảo.</p>]]></content><author><name></name></author><category term="Learning::" /><summary type="html"><![CDATA[khi chạy ubuntu docker container, chính xác là mình đang chạy cái gì vậy?]]></summary></entry><entry><title type="html">Information within Structure</title><link href="http://localhost:4000/20240429/information-within-structure" rel="alternate" type="text/html" title="Information within Structure" /><published>2024-04-29T00:00:00+00:00</published><updated>2024-04-29T00:00:00+00:00</updated><id>http://localhost:4000/20240429/information-within-structure</id><content type="html" xml:base="http://localhost:4000/20240429/information-within-structure"><![CDATA[<p>khi mình lưu trữ dữ liệu thì bản thân dữ liệu mình lưu trữ chứa thông tin, that’s for sure. nhưng điều mà mình thường không nhận ra đó là cấu trúc lưu trữ dữ liệu cũng chứa rất nhiều thông tin.</p>
+
+<p>ví dụ như file permission string hôm trước mình học. ký tự đầu là file type, 3 bộ triplet ký tự sau là r-w-x cho 3 nhóm user khác nhau, nếu mình muốn tìm xem user có khả năng viết vào file này không, mình sẽ đi thẳng đến ký tự thứ 9 và biết chắc chắn rằng thông tin mình cần chỉ nằm ở ký tự này.</p>
+
+<p><img src="/images/linux-file-permission-2.jpg" alt="file permission string" /></p>
+
+<p>ví dụ khác như TCP header file information. nếu mình là một cái máy tính và tự dưng nhận được cái packet này, làm sao mình biết packet này cần được gửi đến cổng nào? mình có thể nhìn vào bit thứ 17 cho đến 32 của packet (tính từ bit đầu tiên) để có được thông tin về destination port. again, mình chỉ cần quan tâm đến 16 bit tính từ bit thứ 17, mình không cần nhìn ra các chỗ khác để có được thông tin mình cần.</p>
+
+<p><img src="/images/tcp-header-format.jpg" alt="tcp header format" /></p>
+
+<p>một ví dụ khác là cây tìm kiếm nhị phân. mọi phần tử thuộc cây con bên trái sẽ nhỏ hơn root, và mọi phần tử thuộc cây con bên phải sẽ lớn hơn root. mình muốn tìm một phần tử? binary search, mỗi lần đưa ra một quyết định là mình chém bài toán gốc xuống một bài toán có size bằng một nửa, giảm đi rất nhiều computation &amp; comparison cần làm. điều này khả thi là vì cấu trúc lưu trữ của cây tìm kiếm nhị phân. mình luôn giảm bài toán hiện tại thành một bài toán nhỏ hơn được mà không phải lo về tính đúng đắn là vì cấu trúc của cây nó như vậy. lời giải này trên cấu trúc dữ liệu này sẽ không bao giờ sai.</p>
+
+<p><img src="/images/bst.jpg" alt="binary search tree" /></p>
+
+<p>kì này mình học NLP xoá mù chữ, và một trong những ý tưởng lớn là attention. khi có cách để giúp mô hình ngôn ngữ (1) cân nhắc nhiều ý nghĩa khả thi cho một đoạn văn bản và (2) pay attention vào ý nghĩa quan trọng, thì chất lượng output của mô hình được cải thiện đáng kể.</p>
+
+<p>mình thấy khả năng có thể chỉ tìm kiếm ở một subset of data nhờ vào sự tổ chức dữ liệu hiệu quả cũng giống như attention của mô hình ngôn ngữ. thay vì phải pay attention to 8, 16, 96 ý nghĩa cùng một lúc, thì mình cân nhắc ngần đó ý nghĩa lúc ban đầu, sau đó chỉ chọn một (vài) ý nghĩa có khả năng cao nhất và làm việc tiếp với nó thôi.</p>
+
+<p>tương tự vậy, khi trồng cây tìm kiếm nhị phân cân bằng, mình phải bỏ công ra sắp xếp lại mỗi lần insert hay delete, nhưng sau đó tìm kiếm sẽ cực kỳ nhanh. pattern số 1 ở đây là mất chút overhead cost để setup data structure, nhưng sau đó thì ai cũng vui vì nhanh và đúng.</p>
+
+<p>ngoài ra trong cây tìm kiếm nhị phân tự cân bằng, thì mình còn biết được thêm là root là median của toàn bộ data set nữa. vậy có thể pattern số 2 là cấu trúc càng phức tạp thì càng chứa nhiều thông tin.</p>
+
+<p>tất cả những cái này thật ra không có mới. ai cũng biết binary search chỉ khả thi trên cấu trúc dữ liệu có thứ tự như sorted array hay bst. mình cũng luôn biết cái đó.</p>
+
+<p>chỉ là bây giờ mình mới nhìn ra một sợi dây chung nối rất nhiều kiến thức đã học từ khắp nơi với nhau. vì sao người ta bỏ bao nhiêu công ra nghiên cứu run time của các cấu trúc dữ liệu? vì sao packet header phải follow đúng format? tại vì ở tầng low low low level (bits 0 1), thì file nào dữ liệu nào cũng chỉ là một dây nhị phân siêu dài : D nếu không có cấu trúc, thì làm sao biết cần phải đọc đến đâu để có thông tin mình cần?</p>
+
+<p>nói chung mình rất thích realization này. giờ mình mới bắt đầu appreciate bao nhiêu công sức thiết kế một hệ thống mà works in tandem với nhau. và thông tin này là kiểu once i see it i cant unsee it. i see structures everywhere now, and i will forever be curious what information the structure alone holds.</p>
+
+<hr />
+<p>credit: người đầu tiên gieo mầm cho mình nhận ra cái này là thầy Nhựt dạy computer networks. hồi đó thầy nói “a protocol is nothing but the header of the packet”. mãi đến bây giờ mình mới hiểu the <strong>structure</strong> of the header is the most important. và network communication protocol về cơ bản chỉ là các tầng network biết phải đọc thông tin mình cần ở đâu trong một dãy nhị phân siêu dài.</p>
+
+<p>what fascinating realization!</p>]]></content><author><name></name></author><category term="Musing::" /><summary type="html"><![CDATA[khi mình lưu trữ dữ liệu thì bản thân dữ liệu mình lưu trữ chứa thông tin, that’s for sure. nhưng điều mà mình thường không nhận ra đó là cấu trúc lưu trữ dữ liệu cũng chứa rất nhiều thông tin.]]></summary></entry><entry><title type="html">Linux File Permission</title><link href="http://localhost:4000/20240426/linux-file-permission" rel="alternate" type="text/html" title="Linux File Permission" /><published>2024-04-26T00:00:00+00:00</published><updated>2024-04-26T00:00:00+00:00</updated><id>http://localhost:4000/20240426/linux-file-permission</id><content type="html" xml:base="http://localhost:4000/20240426/linux-file-permission"><![CDATA[<p>windows filesystem là nhiều cây. mỗi cái ổ C/, D/, hay mỗi lần cắm usb vào là có một cái cây mới. linux filesystem là một và chỉ một cây, bắt đầu từ root folder /</p>
+
+<p>mỗi file trong fs sẽ có một bộ quyền hạn được flag bằng các bits. ban đầu thì unix dùng 7 bit để đánh dấu file permission: 3 bit đầu là read-write-execute power của file owner (và root), 3 bit sau là rwx của các user khác. bit thứ 7 đánh dấu xem file này có được execute với quyền hạn của owner không.</p>
+
+<p><img src="/images/linux-file-permission-1.jpg" alt="original linux file permission binary string" /></p>
+
+<p>mặc dù ban đầu có 7 bit, trên giao diện người dùng là 7 character, thì most time file permission được biểu diễn bằng 10 character. 1 char đầu là filetype, 3 bộ triplet bit sau đó thì là quyền hạn của owner và root, group, và other users, respectively. vì vậy nên sau này khi dùng đến tận 16bit để flag file permission ở low level, thì lúc render lên high level, người ta vẫn giữ nguyên cái 10-character format.</p>
+
+<p><img src="/images/linux-file-permission-2.jpg" alt="new linux file permission binary string" /></p>
+
+<p>đây cũng tính là “backwards compatibility”, nhưng này là đang cố compatible với user cũ lâu năm nhiều hơn là với máy =))</p>
+
+<p>ảnh 3 là mình vẽ lại các layer of abstractions của các file trong một directory. directory là một file đặc biệt lưu i-number (index number), i-number này đem vào tìm trong i-list, thì cái entry i-list[i-number] sẽ chưa inode của file. inode sẽ giúp hệ điều hành biết là file này được lưu ở những phân vùng nào của ổ đĩa (phần cứng), để nó đến đấy lấy dữ liệu cho user đọc/viết/chạy file.</p>
+
+<p><img src="/images/linux-file-permission-3.jpg" alt="file storage in a directory" /></p>]]></content><author><name></name></author><category term="Learning::" /><summary type="html"><![CDATA[windows filesystem là nhiều cây. mỗi cái ổ C/, D/, hay mỗi lần cắm usb vào là có một cái cây mới. linux filesystem là một và chỉ một cây, bắt đầu từ root folder /]]></summary></entry><entry><title type="html">Learning It Hard</title><link href="http://localhost:4000/20240424/learning-it-hard" rel="alternate" type="text/html" title="Learning It Hard" /><published>2024-04-24T00:00:00+00:00</published><updated>2024-04-24T00:00:00+00:00</updated><id>http://localhost:4000/20240424/learning-it-hard</id><content type="html" xml:base="http://localhost:4000/20240424/learning-it-hard"><![CDATA[<p>học khó, học khổ, và vì sao việc thầy cô giữ tiêu chuẩn cao làm mình thấy rất được dignified.</p>
+
+<p>mình tự nhận là người dốt. đây không phải là một cái self-depricating bit mình nói để mua vui hay cope, mà mình fully aware là mình không biết nhiều.</p>
+
+<p>trộm vía mình được học những giáo viên có tiêu chuẩn cao. họ demand nhiều ở học sinh, họ làm kiến thức và bài kiểm tra khó. mình có một thầy mà luôn nói với mình trước khi phát đề thi là “nếu mấy đứa làm được đề này thì mấy đứa sẽ ngang với học sinh của các trường top học môn này”. điều này làm mình rất yên tâm, bất kể có làm được bài hay không. thi cử về cơ bản cũng chỉ là đang test xem mình học và hiểu đến đâu thôi. sai thì sửa hỏng thì làm lại.</p>
+
+<p>nhưng việc biết mình đang được hold to a high standard is an insanely good feeling. yes it always hurts to see myself fail a test, but its always absolutely worth it. một đề khó nếu làm được thì rất vui, nếu không làm được thì sẽ biết ngay mình thiếu cái gì, ở đâu, rồi học bổ sung được. học khó, đề khó thì lời nhiều hơn mất.</p>
+
+<p>it is the feeling that i know i am being held to a high standard, that if i make it through this course i am no less knowledgeable than another student from the same class in another institution, that i am made aware of the standards to which i should strive to meet, that keeps me going the strongest. i feel like an absolute dumb shit while taking a challenging course, but in retrospect i never regret going through that gruesome time. the things i learn finds it way to circle back and support me in ways i did not plan or expect.</p>
+
+<p>this is not a new thought. i have had this realization for quite over a year now. i am writing it so that i can read this when times are tough and things get the better part of me. it is insanely dignified to be held to a high standard, and it is always worth it to run after such standard, when it comes to learning.</p>
+
+<p>cố lên lan phương.</p>
+
+<p><img src="/images/learning-it-hard.png" alt="nlp lecture notes" /></p>]]></content><author><name></name></author><category term="Musing::" /><summary type="html"><![CDATA[học khó, học khổ, và vì sao việc thầy cô giữ tiêu chuẩn cao làm mình thấy rất được dignified.]]></summary></entry><entry><title type="html">Archlinux Installation</title><link href="http://localhost:4000/20231029/archlinux-installation" rel="alternate" type="text/html" title="Archlinux Installation" /><published>2023-10-29T00:00:00+00:00</published><updated>2023-10-29T00:00:00+00:00</updated><id>http://localhost:4000/20231029/archlinux-installation</id><content type="html" xml:base="http://localhost:4000/20231029/archlinux-installation"><![CDATA[<p>i meant to install archlinux along with my current ubuntu because i just want to participate in a meme. turns out resizing disk volume is a lot harder than i expected and i accidentally wiped out the only operating system i had.</p>
+
+<p>i had to went along with arch installation and the following 7 hours were absolutely gruesome because i have never went so long without a graphical interface to tweak. even when i have successfully installed arch, i thought i did not, because all i see is a terminal. turns out arch itself only has that terminal and GUI is an add-on.</p>
+
+<p>i can only say i enjoyed the entire process in retrospection, because at the moment of doing it, i had no idea what was going on. but now that i have a browser (literally who needs OS just give me a browser), it is clear that i have never learned so much in such a short time. i learned network things when trying to connect to wifi from shell. i learned MAC and device entrusting when trying to connect to bluetooth from shell. i learned vim and my god has my typing been improved. it has gotten to a point where basic file navigation are getting easier with a terminal than with the graphical interface.</p>
+
+<p>a year from now, i hope, looking back at this, everything that i have described above becomes obvious, like a second nature. but for now, i am so stoked to learn so many new things that i have been taking for granted. the fact that arch does not come with anything is a blessing to me, because by trying to config a tolerable and usable OS, i have to do so much more than before.</p>
+
+<p>one of the things that i have been told once and a while is to “not reinventing the wheel”. stand on the shoulders of giants, learn to use existing modules, move on and build more things upon that. while it is true that i need to move on, and that i cannot practically recreate everything i see, there are a lot of values in reinventing some wheels. i wouldn’t have learnt so much about how storage and file structure works if i wasn’t forced to manage everything from a terminal. inconvenience is helpful and necessary.</p>
+
+<p>arch also make me unlearn the expectations that something will come preinstalled. it doesn’t even have an innate tool to adjust speaker volume (i wasn’t able to listen to anything on my computer until i realize that i have to find something to turn volume on). nothing is there, and if i want it, search, or else make it. generally this is a mindset that i want to have, so another win.</p>
+
+<p>i will continue to play around and potentially delete my operating system one or several more times. but if tinkering is something i enjoy, i can’t really lose anything.</p>
+
+<p>a truly happy accident. 8/10 would recommend. more operating system adventures to come.</p>
+
+<p><img src="/images/arch-installation.png" alt="Archlinux Neofetch" /></p>]]></content><author><name></name></author><category term="Musing::" /><summary type="html"><![CDATA[i meant to install archlinux along with my current ubuntu because i just want to participate in a meme. turns out resizing disk volume is a lot harder than i expected and i accidentally wiped out the only operating system i had.]]></summary></entry></feed>
