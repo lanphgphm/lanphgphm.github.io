@@ -40,7 +40,7 @@ li > ul, li > ol { margin-bottom: 0; }
 h1, h2, h3, h4, h5, h6 { font-weight: 400; }
 
 /** Links */
-a { color: #213555;; }
+a { color: #40e0d0;; }
 a:visited { color: #091527; }
 a:hover { color: #091527; text-decoration: underline; }
 .social-media-list a:hover { text-decoration: none; }
@@ -87,14 +87,14 @@ table tr:nth-child(even) { background-color: #e5d0ac; }
 table th, table td { padding: 10px 15px; }
 table th { 
   background-color: #e5d0ac; 
-  border: 1px solid #213555; 
-  border-bottom-color: #213555; 
+  border: 1px solid #40e0d0; 
+  border-bottom-color: #40e0d0; 
 }
-table td { border: 1px solid #213555; }
+table td { border: 1px solid #40e0d0; }
 
 /** Site header */
 .site-header { 
-  border-top: 5px solid #213555; 
+  border-top: 5px solid #40e0d0; 
   border-bottom: 1px solid #cca96d; 
   min-height: 55.95px; 
   position: relative; 
@@ -108,10 +108,10 @@ table td { border: 1px solid #213555; }
   margin-bottom: 0; 
   float: left; 
 }
-.site-title, .site-title:visited { color: #6d2323; }
+.site-title, .site-title:visited { color: #ccff00; }
 
 .site-nav { 
-  color: #6d2323; 
+  color: #ccff00; 
   float: right; 
   line-height: 54px; 
 }
@@ -126,7 +126,7 @@ table td { border: 1px solid #213555; }
   .site-nav input ~ .trigger { clear: both; display: none; }
   .site-nav input:checked ~ .trigger { display: block; padding-bottom: 5px; }
   .site-nav .page-link { 
-    color: #6d2323; 
+    color: #ccff00; 
     display: block; 
     padding: 5px 10px; 
     margin-left: 20px; 
@@ -135,7 +135,7 @@ table td { border: 1px solid #213555; }
 
 /** Site footer */
 .site-footer { 
-  color: #6d2323;
+  color: #ccff00;
   border-top: 1px solid #cca96d; 
   padding: 30px 0; 
 }
@@ -286,7 +286,7 @@ table td { border: 1px solid #213555; }
 
 .category-card h3 {
   margin-top: 0;
-  color: #6d2323;
+  color: #ccff00;
   border-bottom: 1px solid #cca96d;
   padding-bottom: 10px;
   margin-bottom: 15px;
@@ -315,7 +315,7 @@ table td { border: 1px solid #213555; }
   text-align: right;
   margin-top: 10px;
   font-size: 14px;
-  color: #213555;
+  color: #40e0d0;
 }
 
 .feeling-lucky-container {
@@ -327,7 +327,7 @@ table td { border: 1px solid #213555; }
 .feeling-lucky-button {
   display: inline-block;
   padding: 10px 20px;
-  background-color: #6d2323;
+  background-color: #ccff00;
   color: #fef9e1;
   border: 1px solid #cca96d;
   border-radius: 8px;
