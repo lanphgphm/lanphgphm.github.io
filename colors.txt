@@ -1,0 +1,13 @@
+#0b0b3b
+#E6E6FF
+#eb0095
+#50cb91
+#75fbed
+#fc98aa
+
+-- #0b0b3b
+-- #E6E6FF
+-- #eb0095
+-- #50cb91
+-- #75fbed
+-- #fc98aa
