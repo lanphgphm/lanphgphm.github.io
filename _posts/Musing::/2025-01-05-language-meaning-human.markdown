@@ -11,30 +11,30 @@ Cento is the type of poem built from multiple poems. Cento for Falasteen is a ce
 LoveLetters was an algorithm designed by Christopher Strachey in 1952 to automatically write love letters whose senders and recipients are unnamed and genderless. Due to the anonymous manner in which the lovers are mentioned in the letters, along with the fact that Strachey and his colleague Alan Turing were both gay at the time, this letter generation project was often viewed through the lens of queer theory as a critique of the heteronormativity of portrayals of love. 
 
 LoveLetters was written with an English vocabulary. Cento for Falasteen also debuted as a full English work, though some of the constituent poems needed to be translated from Arabic. The cento contains a line that reads:        
-    > I write in English, feeling a rising tension between       
-    > myself and the language. The words feel strange, empty,          
-    >
-    >                 unable.     
+> I write in English, feeling a rising tension between       
+> myself and the language. The words feel strange, empty,          
+>
+>                 unable.     
 which emphasized the feeling of alienation that writing in English caused. English was not the author’s mother tongue. The popularity and wide adoption of English was a direct result of colonization, so using the language might have reminded the author of the very violence inflicted upon their ancestors. There was a “tension" between the writer and the language; the language felt restricting in its ability to enable expression. Yet, English is the medium through which these experiences were efficiently communicated. 
 
 LoveLetters, in contrast, never acknowledged the significance (or lack thereof) of the fact that English is its only language. LoveLetters plays by the rule, it obeys a very strict grammar and a limited vocabulary set curated by Christopher Strachey. Despite this, the letters still read as rather subversive. The words were all English words meant to signify love, but the ensemble of words read a feeling of uncanny, of strangeness.      
-    > Fanciful Love,     
-    >   You are my seductive burning. My charm pines for your tender love. You are my loving longing. My craving desire fervently adores your fervour. You are my loving fondness.          
-    >           Yours fervently,    
-    >           M.U.C.     
+> Fanciful Love,     
+>   You are my seductive burning. My charm pines for your tender love. You are my loving longing. My craving desire fervently adores your fervour. You are my loving fondness.          
+>           Yours fervently,    
+>           M.U.C.     
 Sentences like “My craving desire fervently adores your fervour.” appeared to be trying too hard at eliciting passion and emotion, that it became comical, as if a caricature of love. Both the author in the Cento for Falasteen excerpt and the algorithm behind LoveLetters attempted and struggled with the use of English as a language to convey some meaning. But the conflict the prior encountered was from the knowledge that this language is not theirs, is of their oppressor, while the struggle of the latter algorithm was because it was inherently not a human, not capable of thinking.
 
 Another notable point of comparison between these texts is the way each addressed the lack of personal identity of the mentioned subjects. In Cento for Falasteen:      
-    > They called us:        
-    >     Human-animals       
-    >     Collateral damage       
-    >     Casualties      
-    >     Uncivilized     
-    >     Third world people      
-    >     Terrorists      
-    > [...]       
-    >     [Your names are the only language](https://thecradle.co/articles/gaza-health-ministry-lists-names-of-6747-palestinians-killed-by-israel)        
-    >     That holds any meaning.        
+> They called us:        
+>     Human-animals       
+>     Collateral damage       
+>     Casualties      
+>     Uncivilized     
+>     Third world people      
+>     Terrorists      
+> [...]       
+>     [Your names are the only language](https://thecradle.co/articles/gaza-health-ministry-lists-names-of-6747-palestinians-killed-by-israel)        
+>     That holds any meaning.        
 Between each item in the list of names Zionists used to call Palestinians, there was no comma. Palestinians were being called all of those names. There was not a lack of language to address the people of Palestine. Yet, all items on that list identify Palestinians as lesser-than beings. It was because of this active effort to dehumanize Palestinians that their names became the most meaningful identifiers. When the whole world viewed Palestinians as numbers, casualties, animals, terrorists, their names are what retains dignity for them. Their names had etymology, had history, had meaning, had evidence that proves their personhood.
 
 In contrast to that, the algorithmically generated love letters that are devoid of personal identity could be understood as a way of subtly expressing love that was not socially acceptable: non-heterosexual love. Because these letters were addressing an arbitrary recipient, everyone who read them can imagine themselves at the receiving end of such passionate love. The lack of personal identity here helped humanize the love, the desire to love, and the desire to be loved by people who are outside of heteronormative narratives of love. If these letters were to include names–presumably the traditionally female name of a woman or traditionally male name of a man who supposedly would be getting the letters–it would have excluded many people from being able to project themselves onto the center of what the letter wrote.
