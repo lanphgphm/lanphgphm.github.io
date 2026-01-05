@@ -60,9 +60,9 @@ blockquote > :last-child { margin-bottom: 0; }
 /** Code formatting */
 pre, code { 
   font-size: 15px; 
-  border: 1px solid #cca96d; 
+  border: 1px solid #ab6dcc; 
   border-radius: 3px; 
-  background-color: #e9dcc7; }
+  background-color: #ab6dcc; }
 
 code { padding: 1px 5px; }
 
@@ -95,7 +95,7 @@ table td { border: 1px solid #40e0d0; }
 /** Site header */
 .site-header { 
   border-top: 5px solid #40e0d0; 
-  border-bottom: 1px solid #cca96d; 
+  border-bottom: 1px solid #ab6dcc; 
   min-height: 55.95px; 
   position: relative; 
 }
@@ -136,7 +136,7 @@ table td { border: 1px solid #40e0d0; }
 /** Site footer */
 .site-footer { 
   color: #ccff00;
-  border-top: 1px solid #cca96d; 
+  border-top: 1px solid #ab6dcc; 
   padding: 30px 0; 
 }
 
@@ -275,7 +275,7 @@ table td { border: 1px solid #40e0d0; }
 
 .category-card {
   flex: 0 0 300px; /* Fixed width, don't grow or shrink */
-  border: 1px solid #cca96d;
+  border: 1px solid #ab6dcc;
   border-radius: 8px;
   padding: 20px;
   background-color: #fef9e1;
@@ -287,7 +287,7 @@ table td { border: 1px solid #40e0d0; }
 .category-card h3 {
   margin-top: 0;
   color: #ccff00;
-  border-bottom: 1px solid #cca96d;
+  border-bottom: 1px solid #ab6dcc;
   padding-bottom: 10px;
   margin-bottom: 15px;
 }
@@ -329,7 +329,7 @@ table td { border: 1px solid #40e0d0; }
   padding: 10px 20px;
   background-color: #ccff00;
   color: #fef9e1;
-  border: 1px solid #cca96d;
+  border: 1px solid #ab6dcc;
   border-radius: 8px;
   font-size: 16px;
   cursor: pointer;
