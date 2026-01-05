@@ -60,11 +60,14 @@ blockquote > :last-child { margin-bottom: 0; }
 /** Code formatting */
 pre, code { 
   font-size: 15px; 
-  border: 1px solid #ab6dcc; 
+  border: 1px solid #fdd270; 
   border-radius: 3px; 
-  background-color: #ab6dcc; }
+  background-color: #fdd270; }
 
-code { padding: 1px 5px; }
+code { 
+  padding: 1px 5px; 
+  color: #0b0b3b;
+}
 
 pre { padding: 8px 12px; overflow-x: auto; }
 pre > code { border: 0; padding-right: 0; padding-left: 0; }
@@ -116,7 +119,7 @@ table td { border: 1px solid #40e0d0; }
 }
 .site-nav .nav-trigger { display: none; }
 .site-nav .menu-icon { display: none; }
-.site-nav .page-link { color: #111; line-height: 1.5; }
+.site-nav .page-link { color: #fc98aa; line-height: 1.5; }
 .site-nav .page-link:not(:last-child) { margin-right: 20px; }
 @media screen and (max-width: 600px) { .site-nav { position: absolute; top: 9px; right: 15px; background-color: #fdfdfd; border: 1px solid #e8e8e8; border-radius: 5px; text-align: right; }
   .site-nav label[for="nav-trigger"] { display: block; float: right; width: 36px; height: 36px; z-index: 2; cursor: pointer; }
