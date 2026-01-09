@@ -19,4 +19,4 @@ But it was yesterday when I realized that the weight of this phrase no longer be
 
 The air is toxic, but it sustains me to the best of its ability. My lungs are damaged from this air, but it sustains me to the best of its ability. And I too, no matter how tattered, will sustain the ecosystem around me to the best of my ability. 
 
-What am I even saying. 
+Until the day I die. 
