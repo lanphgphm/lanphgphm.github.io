@@ -111,6 +111,7 @@ table td { border: 1px solid #40e0d0; }
   float: left; 
 }
 .site-title, .site-title:visited { color: #95c623; }
+.site-title:hover { color: #40e0d0; }
 
 .site-nav { 
   color: #95c623; 
