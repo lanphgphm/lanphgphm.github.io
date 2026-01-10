@@ -40,15 +40,15 @@ li > ul, li > ol { margin-bottom: 0; }
 h1, h2, h3, h4, h5, h6 { font-weight: 400; }
 
 /** Links */
-a { color: #40e0d0;; }
-a:visited { color: #40e0d0; }
-a:hover { color: #ccff00; text-decoration: underline; }
+a { color: #95c623; }
+a:visited { color: #95c623; }
+a:hover { color: #40e0d0; text-decoration: underline; }
 .social-media-list a:hover { text-decoration: none; }
 .social-media-list a:hover .username { text-decoration: underline; }
 
 /** Blockquotes */
 blockquote { 
-  color: #40e0d0; 
+  color: #36ada1; 
   border-left: 4px solid #40e0d0; 
   padding-left: 15px; 
   font-size: 18px; 
@@ -60,9 +60,9 @@ blockquote > :last-child { margin-bottom: 0; }
 /** Code formatting */
 pre, code { 
   font-size: 15px; 
-  border: 1px solid #fdd270; 
+  border: 1px solid #ab6dcc; 
   border-radius: 3px; 
-  background-color: #fdd270; }
+  background-color: #bd9ae5; }
 
 code { 
   padding: 1px 5px; 
@@ -97,7 +97,7 @@ table td { border: 1px solid #40e0d0; }
 
 /** Site header */
 .site-header { 
-  border-bottom: 1px solid #ab6dcc; 
+  border-bottom: 1px solid #ab6dcc;
   min-height: 55.95px; 
   position: relative; 
 }
@@ -110,16 +110,16 @@ table td { border: 1px solid #40e0d0; }
   margin-bottom: 0; 
   float: left; 
 }
-.site-title, .site-title:visited { color: #ccff00; }
+.site-title, .site-title:visited { color: #95c623; }
 
 .site-nav { 
-  color: #ccff00; 
+  color: #95c623; 
   float: right; 
   line-height: 54px; 
 }
 .site-nav .nav-trigger { display: none; }
 .site-nav .menu-icon { display: none; }
-.site-nav .page-link { color: #fc98aa; line-height: 1.5; }
+.site-nav .page-link { color: #ab6dcc; line-height: 1.5; }
 .site-nav .page-link:not(:last-child) { margin-right: 20px; }
 @media screen and (max-width: 600px) { .site-nav { position: absolute; top: 9px; right: 15px; background-color: #fdfdfd; border: 1px solid #e8e8e8; border-radius: 5px; text-align: right; }
   .site-nav label[for="nav-trigger"] { display: block; float: right; width: 36px; height: 36px; z-index: 2; cursor: pointer; }
@@ -128,7 +128,7 @@ table td { border: 1px solid #40e0d0; }
   .site-nav input ~ .trigger { clear: both; display: none; }
   .site-nav input:checked ~ .trigger { display: block; padding-bottom: 5px; }
   .site-nav .page-link { 
-    color: #ccff00; 
+    color: #95c623; 
     display: block; 
     padding: 5px 10px; 
     margin-left: 20px; 
@@ -137,7 +137,7 @@ table td { border: 1px solid #40e0d0; }
 
 /** Site footer */
 .site-footer { 
-  color: #ccff00;
+  color: #fc98aa;
   border-top: 1px solid #ab6dcc; 
   padding: 30px 0; 
 }
@@ -277,10 +277,11 @@ table td { border: 1px solid #40e0d0; }
 
 .category-card {
   flex: 0 0 300px; /* Fixed width, don't grow or shrink */
-  border: 1px solid #ab6dcc;
+  border: 1px solid #95c623;
   border-radius: 8px;
   padding: 20px;
-  background-color: #ab6dcc;
+  background-color: #0b0b3b;
+  color: #8a95a5;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
   display: flex;
   flex-direction: column;
@@ -288,11 +289,28 @@ table td { border: 1px solid #40e0d0; }
 
 .category-card h3 {
   margin-top: 0;
-  color: #ccff00;
-  border-bottom: 1px solid #ccff00;
+  color: #fc98aa;
+  border-bottom: 1px solid #8a95a5;
+  font-style: oblique;
   padding-bottom: 10px;
   margin-bottom: 15px;
 }
+
+/* .category-card .post-list a {
+    color: #9c0d38;
+}
+
+.category-card .post-list a:hover {
+    color: #0b0b3b;
+}
+
+.category-card a {
+    color: #0b0b3b;
+}
+
+.category-card a:hover {
+    color: #9c0d38;
+} */
 
 .category-card .post-list {
   margin-left: 0;
@@ -307,7 +325,7 @@ table td { border: 1px solid #40e0d0; }
 
 .category-card:hover {
   box-shadow: 0 4px 8px rgba(248, 227, 0, 0.1);
-  border-color: #ccff00;
+  border-color: #95c623;
   transform: translateY(-3px);
   transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
 }
@@ -331,7 +349,7 @@ table td { border: 1px solid #40e0d0; }
   padding: 10px 20px;
   background-color: #fc98aa;
   color: #0b0b3b;
-  border: 1px solid #ab6dcc;
+  border: 1px solid #fc98aa;
   border-radius: 8px;
   font-size: 16px;
   cursor: pointer;
