@@ -2,7 +2,7 @@
 layout: post_with_category
 title: "Fragments, language, meaning, human experience"
 date: 2026-01-05
-categories: "Musing::"
+categories: "CloseReading::"
 ---
 This is a comparative essay between [Cento for Falasteen](https://adimagazine.com/issues/17/) (from works of Hasheemah Afaneh, laila r.markled, Yousef Abu-Salah, Rashid Hussain (translated by Salma Harland), Bassam Jamil (translated by Nicole Mankinen), Rania Lardjane, Hani Albayarie, Summer Awad, Veera Sulaiman, Suzana Sallak, Nama’a Qudah, Michael Jabareen, Alia Yunis, Yara Ghabayen, Aiya Sakr, Edward Salem, Ahmad Mallah, Kat Abdallah, Liane Al Ghusain, Priscilla Wathington, Lisa Suhair Majaj, Farah Alhaddad, Mikhail de Parlaine, Bader Alzaharna, and Fady Joudah) and [LoveLetters](www.gingerbeardman.com/loveletter/) (by Christopher Strachey (reimplemented by Matt Sephton “gingerbeardman”)). By comparing these two, I want to highlight how each work subverted the use of English as a language, as well as contrast how differently the lack of identity contributed to the message, which then helped me answer the question “what does it mean to be a human?”
 
