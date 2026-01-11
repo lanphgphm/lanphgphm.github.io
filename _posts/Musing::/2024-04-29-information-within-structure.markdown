@@ -33,7 +33,7 @@ chỉ là bây giờ mình mới nhìn ra một sợi dây chung nối rất nhi
 
 nói chung mình rất thích realization này. giờ mình mới bắt đầu appreciate bao nhiêu công sức thiết kế một hệ thống mà works in tandem với nhau. và thông tin này là kiểu once i see it i cant unsee it. i see structures everywhere now, and i will forever be curious what information the structure alone holds.
 
---------------------
+---
 credit: người đầu tiên gieo mầm cho mình nhận ra cái này là thầy Nhựt dạy computer networks. hồi đó thầy nói "a protocol is nothing but the header of the packet". mãi đến bây giờ mình mới hiểu the __structure__ of the header is the most important. và network communication protocol về cơ bản chỉ là các tầng network biết phải đọc thông tin mình cần ở đâu trong một dãy nhị phân siêu dài.
 
 what fascinating realization!

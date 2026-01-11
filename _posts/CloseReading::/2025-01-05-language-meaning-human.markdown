@@ -57,3 +57,7 @@ When thinking about the Cento for Falasteen, I ask why is it that these independ
 Ultimately, “meaning” is a human construct. I wouldn’t imagine a world without human intelligence to require meaning and meaning making. If we were to accept this, all meanings are valid, correct, true, justified; all answers to “what does it mean to be human?” would also be valid, correct, true, and justified.
 
 And with that, my current working definition of being human–which is also an answer to our question–is that: to be human is to live the fragments and to extract meaning out of them. Sometimes the language is not meant to be cohesive like in Cento for Falasteen, but the messages converge. Some other times, both the presenting words and the meaning diverge, like in LoveLetters, which then forces us to look at what is not there (identity) to make sense of what was being said.
+
+---
+Related: 
+- My reimplementation of Christopher Strachey's Love Letter Generator with more modern vocabulary: [Modern Love Letter Generator](https://lanphgphm.github.io/modern-love-letter/)
