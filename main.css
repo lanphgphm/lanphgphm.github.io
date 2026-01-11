@@ -42,14 +42,14 @@ h1, h2, h3, h4, h5, h6 { font-weight: 400; }
 /** Links */
 a { color: #95c623; }
 a:visited { color: #95c623; }
-a:hover { color: #40e0d0; text-decoration: underline; }
+a:hover { color: #36ada1; text-decoration: underline; }
 .social-media-list a:hover { text-decoration: none; }
 .social-media-list a:hover .username { text-decoration: underline; }
 
 /** Blockquotes */
 blockquote { 
   color: #36ada1; 
-  border-left: 4px solid #40e0d0; 
+  border-left: 4px solid #36ada1; 
   padding-left: 15px; 
   font-size: 18px; 
   letter-spacing: -1px; 
@@ -90,10 +90,10 @@ table tr:nth-child(even) { background-color: #e5d0ac; }
 table th, table td { padding: 10px 15px; }
 table th { 
   background-color: #e5d0ac; 
-  border: 1px solid #40e0d0; 
-  border-bottom-color: #40e0d0; 
+  border: 1px solid #36ada1; 
+  border-bottom-color: #36ada1; 
 }
-table td { border: 1px solid #40e0d0; }
+table td { border: 1px solid #36ada1; }
 
 /** Site header */
 .site-header { 
@@ -111,7 +111,7 @@ table td { border: 1px solid #40e0d0; }
   float: left; 
 }
 .site-title, .site-title:visited { color: #95c623; }
-.site-title:hover { color: #40e0d0; }
+.site-title:hover { color: #36ada1; }
 
 .site-nav { 
   color: #95c623; 
@@ -297,21 +297,9 @@ table td { border: 1px solid #40e0d0; }
   margin-bottom: 15px;
 }
 
-/* .category-card .post-list a {
-    color: #9c0d38;
+.category-card .view-all {
+  color: #36ada1;
 }
-
-.category-card .post-list a:hover {
-    color: #0b0b3b;
-}
-
-.category-card a {
-    color: #0b0b3b;
-}
-
-.category-card a:hover {
-    color: #9c0d38;
-} */
 
 .category-card .post-list {
   margin-left: 0;
@@ -325,7 +313,7 @@ table td { border: 1px solid #40e0d0; }
 }
 
 .category-card:hover {
-  box-shadow: 0 4px 8px rgba(248, 227, 0, 0.1);
+  box-shadow: 4px 4px 8px rgba(149, 198, 35, 0.5);
   border-color: #95c623;
   transform: translateY(-3px);
   transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
@@ -336,7 +324,7 @@ table td { border: 1px solid #40e0d0; }
   text-align: right;
   margin-top: 10px;
   font-size: 14px;
-  color: #40e0d0;
+  color: #36ada1;
 }
 
 .feeling-lucky-container {
