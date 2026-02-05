@@ -1,8 +1,0 @@
----
-layout: post_with_category
-title: "Theme of Rape within 2006's Paprika"
-date: 2025-01-11 
-categories: "CloseReading::" 
----
-
-abc 123 
