@@ -12,8 +12,8 @@ I found cool people and their traces online. I'd like to make a collection for f
 - [A typing interface in prolog](https://github.com/lewtds/bogo-prolog/tree/master) 
 
 2. vanhger  
-- [Personal distributed storage on Etherium](https://vanhger.github.io/Blog/Software/2024-07-24-private-distributed-storage.html)     
-- [Motivation, meaning of life](https://vanhger.github.io/Blog/Life/2024-27-08-mat-dong-luc.html)        
+- [Personal distributed storage on Etherium](https://vanhger.github.io/Software/2024-07-24-private-distributed-storage.html)     
+- [Motivation, meaning of life](https://van-ghia.github.io/Blog/2024-27-08-mat-dong-luc.html)        
 
 ### Also, look at these crazy commit patterns:      
 ![alt text](/images/broccoli.png)       
